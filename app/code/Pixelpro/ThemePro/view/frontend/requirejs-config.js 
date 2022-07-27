@@ -1,0 +1,10 @@
+var config =
+    {
+        map:
+        {
+           '*':
+               {
+                'Magento_Catalog/js/catalog-add-to-cart': 'Vendor_Module/js/catalog-add-to-cart'
+               }
+        }
+    };

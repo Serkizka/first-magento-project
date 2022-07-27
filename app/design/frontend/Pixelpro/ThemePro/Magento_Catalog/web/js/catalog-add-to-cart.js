@@ -100,6 +100,12 @@ define([
             self.disableAddToCartButton(form);
             formData = new FormData(form[0]);
 
+            var popup = $('<div class="add-to-cart-dialog"/>').modal({
+                modalClass: "add-to-cart-popup",
+                title: "Thank you",
+            });
+            popup.modal("openModal");
+
             $.ajax({
                 url: form.prop('action'),
                 data: formData,

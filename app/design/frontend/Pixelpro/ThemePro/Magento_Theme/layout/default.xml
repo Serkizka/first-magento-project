@@ -1,0 +1,39 @@
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
+                <argument name="logo_img_width" xsi:type="number">160</argument>
+                <argument name="logo_img_height" xsi:type="number">38</argument>
+            </arguments>
+        </referenceBlock>
+
+        <!--header-top-->
+
+        <referenceBlock name="header.panel.wrapper" remove="true"/>
+
+        <referenceContainer name="page.wrapper">
+            <block
+                class="Magento\Framework\View\Element\Template"
+                name="top.header"
+                template="Magento_Theme::header-top.phtml"
+                before="header.container"/>
+        </referenceContainer>
+
+
+        <!--header-top-end-->
+
+        <!--header-->        
+        <move element="minicart" destination="header-wrapper" />
+        <move element="authorization-link" destination="header-wrapper" />
+        
+
+        <!-- <move element="currency" destination="header-wrapper"/> -->
+        <move element="wish-list-link" destination="header-wrapper" />
+        <move element="minicart" destination="header-wrapper"/>
+        <!--header-end-->
+
+    </body>
+</page>
