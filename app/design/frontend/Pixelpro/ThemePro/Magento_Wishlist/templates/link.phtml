@@ -1,0 +1,32 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/* @var \Magento\Wishlist\Block\Link $block */
+?>
+
+
+<ul class="wishlist__list">
+    <li class="link wishlist" data-bind="scope: 'wishlist'">
+        <a class="wishlist__link" href="#">
+            <img class="wishlist__image" src="<?= $block->getViewFileUrl('images/heart.svg'); ?>" alt="wihlist image" width="21" height="21" />
+        </a>
+    </li>
+</ul>
+
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "magento_ui/js/core/app": {
+                "components": {
+                    "wishlist": {
+                        "component": "magento_wishlist/js/view/wishlist"
+                    }
+                }
+            }
+        }
+    }
+</script>
