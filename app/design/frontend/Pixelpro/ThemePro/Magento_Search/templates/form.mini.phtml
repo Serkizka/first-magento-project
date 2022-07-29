@@ -16,17 +16,23 @@ $allowedSuggestion = $configProvider->isSuggestionsAllowed();
 $quickSearchUrl = $allowedSuggestion ? $escaper->escapeUrl($helper->getSuggestUrl()) : '';
 ?>
 <div class="block block-search">
-    <div class="block block-title"><strong><?= $escaper->escapeHtml(__('Search')) ?></strong></div>
+    <div class="block block-title">
+        <strong><?= $escaper->escapeHtml(__('Search')) ?></strong>
+    </div>
     <div class="block block-content">
-        <form class="form minisearch" id="search_mini_form"
-              action="<?= $escaper->escapeUrl($helper->getResultUrl()) ?>" method="get">
+        <form
+            class="form minisearch"
+            id="search_mini_form"
+            action="<?= $escaper->escapeUrl($helper->getResultUrl()) ?>"
+            method="get">
             <div class="field search">
                 <label class="label" for="search" data-role="minisearch-label">
                     <span><?= $escaper->escapeHtml(__('Search')) ?></span>
                 </label>
                 <div class="control">
-                    <input id="search"
-                           data-mage-init='{
+                    <input
+                        id="search"
+                        data-mage-init='{
                             "quickSearch": {
                                 "formSelector": "#search_mini_form",
                                 "url": "<?= /* @noEscape */ $quickSearchUrl ?>",
@@ -34,29 +40,27 @@ $quickSearchUrl = $allowedSuggestion ? $escaper->escapeUrl($helper->getSuggestUr
                                 "minSearchLength": "<?= $escaper->escapeHtml($helper->getMinQueryLength()) ?>"
                             }
                         }'
-                           type="text"
-                           name="<?= $escaper->escapeHtmlAttr($helper->getQueryParamName()) ?>"
-                           value="<?= /* @noEscape */ $helper->getEscapedQueryText() ?>"
-                           placeholder="<?= $escaper->escapeHtmlAttr(__('Waar ben je naar op zoek?')) ?>"
-                           class="input-text"
-                           maxlength="<?= $escaper->escapeHtmlAttr($helper->getMaxQueryLength()) ?>"
-                           role="combobox"
-                           aria-haspopup="false"
-                           aria-autocomplete="both"
-                           autocomplete="off"
-                           aria-expanded="false"/>
+                        type="text"
+                        name="<?= $escaper->escapeHtmlAttr($helper->getQueryParamName()) ?>"
+                        value="<?= /* @noEscape */ $helper->getEscapedQueryText() ?>"
+                        placeholder="<?= $escaper->escapeHtmlAttr(__('Waar ben je naar op zoek?')) ?>"
+                        class="input-text"
+                        maxlength="<?= $escaper->escapeHtmlAttr($helper->getMaxQueryLength()) ?>"
+                        role="combobox"
+                        aria-haspopup="false"
+                        aria-autocomplete="both"
+                        autocomplete="off"
+                        aria-expanded="false"/>
                     <div id="search_autocomplete" class="search-autocomplete"></div>
                     <?= $block->getChildHtml() ?>
                 </div>
             </div>
-            <div class="actions">`
-                <button type="submit"
-                        title="<?= $escaper->escapeHtml(__('Search')) ?>"
-                        class="action search"
-                        aria-label="Search"
-                >
-                    <span><?= $escaper->escapeHtml(__('Search')) ?></span>
-                </button>
+            <div class="actions">
+                <button
+                    type="submit"
+                    title="<?= $escaper->escapeHtml(__('Search')) ?>"
+                    class="action search"
+                    aria-label="Search"></button>
             </div>
         </form>
     </div>
