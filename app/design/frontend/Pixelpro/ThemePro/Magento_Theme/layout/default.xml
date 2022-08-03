@@ -19,13 +19,12 @@
 
         <!--header-->
         <move element="logo" destination="header-wrapper" before="-"/>
-        <move element="minicart" destination="header-wrapper"/>
         <move element="authorization-link" destination="header-wrapper"/>
-
-        <!-- <move element="currency" destination="header-wrapper"/> -->
-        <move element="wish-list-link" destination="header-wrapper"/>
-        <move element="minicart" destination="header-wrapper"/>
+        <move element="wish-list-link" destination="header-wrapper" before="minicart"/>
+        <move element="minicart" destination="header-wrapper" after="-"/>
         <!--header-end-->
+
+        <move element="store.settings.language" destination="catalog.topnav" after="-"/>
 
     </body>
 </page>

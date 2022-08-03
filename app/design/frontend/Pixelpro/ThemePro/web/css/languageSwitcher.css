@@ -1,0 +1,16 @@
+.langs-wrapper {
+    height: 15px;
+}
+
+.lang-flag {
+    width: 55px;
+    height: 32.5px;
+    float: left;
+    margin-left: 10px;
+    border: 1px solid transparent;
+    visibility: hidden;
+}
+
+.lang-flag:hover {
+    border: 2.5px solid #FFF;
+}

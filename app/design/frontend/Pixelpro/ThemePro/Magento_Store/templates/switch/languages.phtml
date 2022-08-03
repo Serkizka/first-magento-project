@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Language switcher template
+ */
+?>
+
+<?php if(count($this->getStores())>1): ?>
+<div class="langs-wrapper">
+  <li >
+    <a>stores</a>
+  <div  style="display:none">
+    <?php foreach ($this->getStores() as $_lang): ?>
+    <?php if ($_lang->getCode() != 'default'): ?>
+    <a
+        class="lang-flag"
+        href="<?php echo $this->getCurrentUrl() . '?___store=' . $_lang->getCode();?>"><img
+        src="<?php echo $this->getViewFileUrl('images/flags/flag_' . $_lang->getCode() . '.png');?>"
+        alt="<?php echo 'could not find image for ' . $_lang->getName() ?>"/></a>
+    <?php endif;?>
+    <?php endforeach;?>
+    </div>
+    </li>
+</div>
+<?php endif;?>

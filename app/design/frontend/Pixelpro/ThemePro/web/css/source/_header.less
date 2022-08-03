@@ -7,7 +7,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1200px;
+        max-width: 1280px;
         padding: 0 15px;
         margin: 0 auto;
         height: 68px;
@@ -34,6 +34,8 @@
 
         input {
             background-color: transparent;
+            width: 550px;
+            height: 48px;
         }
 
         .input-text {
@@ -72,23 +74,59 @@
 
 .authorization-link {
     width: 50px;
-    float: right;
     margin-right: 4px;
     color: #ffffff;
-}
+    text-decoration: transparent;
+    transition: text-decoration 0.5s;
 
-.minicart-wrapper {
-    margin-left: 0;
-    margin-right: 4px;
-    width: 40px;
-}
-
-.minicart-wrapper .action.showcart:before {
-    color: #ffffff;
+    &:focus,
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .wishlist {
     &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-right: 4px;
         float: right;
+        border-radius: 50%;
+        transition: background-color 0.5s;
+
+        &:hover {
+            border-radius: 50%;
+            background-color: #010101;
+        }
+    }
+}
+
+.minicart-wrapper {
+  margin-left: 0;
+}
+
+.minicart-wrapper .action.showcart::before {
+  color: #ffffff;
+}
+
+.minicart-wrapper .action.showcart:hover:before {
+  color: #ffffff;
+}
+
+.minicart-wrapper .action.showcart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.5s;
+    &:hover {
+        color: #ffffff;
+        border-radius: 50%;
+        background-color: #010101;
     }
 }
