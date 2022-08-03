@@ -24,7 +24,19 @@
         <move element="minicart" destination="header-wrapper" after="-"/>
         <!--header-end-->
 
+        <!-- nav panel switch languages -->
+
         <move element="store.settings.language" destination="catalog.topnav" after="-"/>
+
+        <!-- nav panel switch languages -->
+
+        <!-- under nav panel line -->
+        <!-- <referenceContainer name="page.top">
+            <block
+                class="Magento\Framework\View\Element\Template"
+                name="under.navigation"
+                template="Magento_Theme::under-navigation.phtml"/>
+        </referenceContainer> -->
 
     </body>
 </page>

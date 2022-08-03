@@ -1,6 +1,33 @@
-.sections.nav-sections {
-  justify-content: space-between;
-  align-items: center;
+.nav-sections-item-content > .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-new {
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        font-weight: 400;
+        transition: text-decoration 0.5s;
+
+        &:hover {
+            text-decoration: underline;
+        }
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+    }
+}
+
+.navigation-new {
+    &__list li {
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+    }
 }
 
 .top-menu {
@@ -11,8 +38,22 @@
     }
 }
 
-.top-menu__list li {
-    &:not(:last-child) {
-        margin-right: 32px;
+.under-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__inner {
+        display: flex;
+        justify-content: left;
+    }
+
+    &__list {
+        display: flex;
+        width: 446px;
+    }
+
+    &__link-deel {
+        margin-left: auto;
     }
 }
