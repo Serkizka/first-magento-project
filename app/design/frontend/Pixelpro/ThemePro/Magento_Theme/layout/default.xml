@@ -31,12 +31,12 @@
         <!-- nav panel switch languages -->
 
         <!-- under nav panel line -->
-        <!-- <referenceContainer name="page.top">
+        <referenceContainer name="page.top">
             <block
                 class="Magento\Framework\View\Element\Template"
                 name="under.navigation"
                 template="Magento_Theme::under-navigation.phtml"/>
-        </referenceContainer> -->
+        </referenceContainer>
 
     </body>
 </page>
