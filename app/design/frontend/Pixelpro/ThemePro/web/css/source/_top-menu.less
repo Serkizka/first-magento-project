@@ -11,6 +11,14 @@
     background-color: @white;
 }
 
+.level-top .ui-menu-item-wrapper {
+  border-bottom: 4px solid transparent;
+  transition: border-bottom 0.5s;
+    &:hover {
+        border-bottom: 4px solid @blue-600;
+    }
+}
+
 .navigation-new {
     &__list {
         display: flex;

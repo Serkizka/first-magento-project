@@ -14,27 +14,27 @@ $columnsLimit = $block->getColumnsLimit() ?: 0;
 $_menuHtml = $block->getHtml('level-top', 'submenu', $columnsLimit)
 ?>
 <nav class="navigation" data-action="navigation">
-    <ul
-        class="top-menu__list"
-        data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
-        <?= /* @noEscape */ $_menuHtml?>
+    <ul class="top-menu__list"
+            data-mage-init='{"menu":{"responsive":true, "expanded":true,
+            "position":{"my":"left top","at":"left bottom"}}}'>
+            <?= /* @noEscape */ $_menuHtml?>
     </ul>
 
     <ul class="navigation-new__list">
         <li class="navigation-new__item">
-            <a class="navigation-new__link" href="#">Zakelijk</a>
+            <a class="navigation-new__link a-btn" href="#">Zakelijk</a>
         </li>
 
         <li class="navigation-new__item">
-            <a class="navigation-new__link" href="#">Cadeaukaart</a>
+            <a class="navigation-new__link a-btn" href="#">Cadeaukaart</a>
         </li>
 
         <li class="navigation-new__item">
-            <a class="navigation-new__link" href="#">Bestelstatus</a>
+            <a class="navigation-new__link a-btn" href="#">Bestelstatus</a>
         </li>
 
         <li class="navigation-new__item">
-            <a class="navigation-new__link" href="#">Klantenservice</a>
+            <a class="navigation-new__link a-btn" href="#">Klantenservice</a>
         </li>
         <?= $block->getChildHtml() ?>
     </ul>

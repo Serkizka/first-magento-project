@@ -37,6 +37,16 @@
                 name="under.navigation"
                 template="Magento_Theme::under-navigation.phtml"/>
         </referenceContainer>
+        <!-- under nav panel line -->
+
+
+      <!-- column main -->
+           <!-- <referenceContainer name="columns">
+                <container name="container" label="" htmlTag="div" htmlClass="container" />
+            </referenceContainer>        
+           <move element="main" destination="container" before="-"/> -->
+        <!-- column main -->
+
 
     </body>
 </page>

@@ -70,20 +70,18 @@ body {
 }
 
   .a-btn {
-    color: #03031a;
-    transition: border 0.5s, color 0.5s, text-decoration 0.5s, text-shadow 0.5s;
+    color: @darkColor;
+    text-decoration: transparent;
+    transition: color 0.5s, text-decoration 0.5s;
 
     &:focus {
-      // box-shadow: 0 0 0 2px rgba(#03031a, 0.7);
     }
 
     &:hover {
-      color: #00f;
+      text-decoration: underline;
     }
 
     &:active {
       color: #00f;
-      // text-shadow: 2px 2px 5px rgba(#03031a, 0.5);
-      box-shadow: none;
     }
   }
