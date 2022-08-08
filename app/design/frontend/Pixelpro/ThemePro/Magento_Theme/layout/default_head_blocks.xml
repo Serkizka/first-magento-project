@@ -9,6 +9,8 @@ COPYING.txt for license details. */ -->
         <css src="style.css"/>
         <css src="css/languageSwitcher.css"/>
 
+
+
         <script src="Magento_Catalog::js/my.js"/>
 
     </head>

@@ -4,30 +4,46 @@
 }
 
 .blocks-promo {
-    &__img {
+    &__banner {
+        max-width: 1280px;
         width: 100%;
-        margin-bottom: 16px;
     }
-
     &__list {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 16px;
     }
-
-    &__item {}
-
-    &__link {
+    &__item {
         position: relative;
     }
+    &__content {
+        height: 92px;
+        margin-bottom: 24px;
+    }
+    &__box {
+        width: 276px;
+        height: 230px;
 
+        &-1 {
+            background-color: @mint-100;
+        }
+        &-2 {
+            background-color: @mint-200;
+        }
+        &-3 {
+            background-color: @mint-300;
+        }
+        &-4 {
+            background-color: @pink-200;
+        }
+    }
     &__text {
         position: absolute;
         top: 24px;
         left: 24px;
         color: @blue-900;
     }
-
     &__title {
         margin-bottom: 4px;
         font-weight: 900;
@@ -39,11 +55,26 @@
         font-size: 16px;
         font-weight: 300;
     }
-
+    &__inner {}
     &__image {
-        width: 230px;
-        height: 264px;
-        background-size: contain;
+        background-position: bottom;
+        background-size: cover;
         background-repeat: no-repeat;
+    }
+    &__link {}
+
+    &__button {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        bottom: 24px;
+        left: 24px;
+        background: @blue-600;
+    }
+
+    &__arrow {
+        width: 14px;
+        height: 14px;
+        color: @white;
     }
 }
