@@ -1,0 +1,39 @@
+.materials {
+    img {
+      width: 130px;
+    }
+    .slick-slide {
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+    &__text {
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .slick-prev {
+        left: 0;
+    }
+
+    .slick-next {
+        right: 17px;
+    }
+
+    .slick-next,
+    .slick-prev {
+        top: calc(~'50% - -30px');
+        width: 35px;
+        height: 35px;
+        background-color: @white;
+        border-radius: 4px;
+
+        &:before {
+            font-size: 25px;
+            line-height: 1.25;
+            color: @blue-600;
+        }
+
+    }
+
+}
