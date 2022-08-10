@@ -48,8 +48,8 @@
         <referenceContainer name="page.wrapper">
             <block
                 class="Magento\Framework\View\Element\Template"
-                name="filmstrip.viewport"
-                template="Magento_Theme::filmstrip-viewport.phtml"
+                name="banners"
+                template="Magento_Theme::banners.phtml"
                 after="main"/>
         </referenceContainer>
 

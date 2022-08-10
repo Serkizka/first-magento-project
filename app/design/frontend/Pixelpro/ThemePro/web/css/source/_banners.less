@@ -1,0 +1,95 @@
+.banners {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        width: 568px;
+        height: 240px;
+        &--1 {
+            background-color: @cream;
+        }
+    }
+
+    &__title {
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
+        width: 260px;
+        background-color: white;
+        box-shadow: 1px 2px 4px 0 rgba(49, 49, 47, .3);
+        border-radius: 0 0 4px 4px;
+
+        &::after {
+            position: absolute;
+            content: '';
+            margin-left: 10px;
+            background-image: url("@{baseDir}/images/alarm.svg");
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        width: 160px;
+        height: 170px;
+        background-image: url("@{baseDir}images/banners/1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &__subtitle {
+      margin-bottom: 16px;
+    }
+    // &__box {
+    //     max-width: 1280px;
+    //     margin: 0 auto;
+    //     padding: 0 15px;
+    // }
+    // &__list {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    // }
+    // &__item {
+    //     width: 443px;
+    //     height: 240px;
+    //     &--1 {
+    //         background-color: @cream;
+    //     }
+    //     &--2 {
+    //         background-color: @pink-200;
+    //     }
+    // }
+
+    // &__image {
+
+    // }
+    // &__title {
+    //     position: relative;
+    //     width: 220px;
+    //     text-align: center;
+    //     font-size: 20px;
+    //     border-radius: 0 0 4px 4px;
+    //     color: #f91906;
+    //     background-color: white;
+    //     margin: 0 auto;
+
+    //     &-icon {
+    //         position: absolute;
+    //         top: 4px;
+    //         right: 40px;
+    //         width: 20px;
+    //         height: 20px;
+    //         background-image: url("@{baseDir}/images/alarm.svg");
+    //         background-size: 20px 20px;
+    //         background-repeat: no-repeat;
+    //         background-position: right;
+    //     }
+    // }
+}

@@ -17,26 +17,26 @@
     &__item {
         position: relative;
     }
-    &__content {
-        height: 92px;
-        margin-bottom: 24px;
-    }
     &__box {
-        width: 276px;
-        height: 230px;
-
-        &-1 {
-            background-color: @mint-100;
-        }
-        &-2 {
-            background-color: @mint-200;
-        }
-        &-3 {
-            background-color: @mint-300;
-        }
-        &-4 {
-            background-color: @pink-200;
-        }
+      width: 280px;
+      height: 235px;
+      
+      &--1 {
+        background-color: @mint-100;
+      }
+      &--2 {
+        background-color: @mint-200;
+      }
+      &--3 {
+        background-color: @mint-300;
+      }
+      &--4 {
+        background-color: @pink-200;
+      }
+    }
+    &__content {
+        height: 70px;
+        margin-bottom: 24px;
     }
     &__text {
         position: absolute;
@@ -50,18 +50,10 @@
         font-size: 18;
         line-height: 1;
     }
-
     &__txt {
         font-size: 16px;
         font-weight: 300;
     }
-    &__inner {}
-    &__image {
-        background-position: bottom;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    &__link {}
 
     &__button {
         position: absolute;
@@ -76,5 +68,13 @@
         width: 14px;
         height: 14px;
         color: @white;
+    }
+
+    &__image {
+        width: 280px;
+        height: 60%;
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }
