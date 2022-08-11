@@ -1,0 +1,48 @@
+.gifts-everyone {
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+    &__title {
+        font-size: 20px;
+        line-height: 1.25;
+        font-weight: 700;
+    }
+    &__txt {
+        font-size: 17px;
+        line-height: 1.5;
+        color: @blue-600;
+
+        &::before {
+            content: ">";
+            display: inline-block;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__link {
+        text-align: center;
+    }
+
+    &__image {
+        width: 276px;
+        height: 184px;
+        margin-bottom: 8px;
+        background-size: cover;
+        background-position: center right;
+        background-repeat: no-repeat;
+    }
+    &__text {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.6px;
+    }
+}

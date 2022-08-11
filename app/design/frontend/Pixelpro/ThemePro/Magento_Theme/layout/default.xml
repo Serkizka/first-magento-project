@@ -39,21 +39,13 @@
         </referenceContainer>
         <!-- under nav panel line -->
 
-        <!-- column main -->
-        <!-- <referenceContainer name="columns"> <container name="container" label=""
-        htmlTag="div" htmlClass="container" /> </referenceContainer> <move
-        element="main" destination="container" before="-"/> -->
-        <!-- column main -->
-
-        <referenceContainer name="page.wrapper">
+        <referenceContainer name="main">
             <block
                 class="Magento\Framework\View\Element\Template"
-                name="banners"
-                template="Magento_Theme::banners.phtml"
-                after="main"/>
+                name="gifts.everyone"
+                template="Magento_Theme::gifts-everyone.phtml"
+                after="-"/>
         </referenceContainer>
-
-
 
     </body>
 </page>

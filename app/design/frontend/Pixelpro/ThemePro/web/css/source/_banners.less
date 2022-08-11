@@ -1,4 +1,5 @@
 .banners {
+  margin-bottom: 16px;
     &__list {
         display: flex;
         justify-content: space-between;
@@ -7,7 +8,10 @@
         width: 568px;
         height: 240px;
         &--1 {
-            background-color: @cream;
+            background-color: @white;
+        }
+        &--2 {
+            background-color: @orange-300;
         }
     }
 
@@ -31,65 +35,74 @@
     }
     &__wrapper {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
+    }
+
+    &__content {
+        &--2 {
+            position: relative;
+            height: 180px;
+            width: 240px;
+            margin: 0 0 0 24px;
+        }
     }
 
     &__image {
         width: 160px;
         height: 170px;
-        background-image: url("@{baseDir}images/banners/1.jpg");
         background-repeat: no-repeat;
         background-size: contain;
+
+        &--1 {
+            background-image: url("@{baseDir}images/banners/1.jpg");
+        }
+        &--2 {
+            width: 395px;
+            height: 234px;
+            background-size: cover;
+            background-position: center center;
+            background-image: url("@{baseDir}images/banners/2.jpg");
+        }
     }
 
     &__subtitle {
-      margin-bottom: 16px;
+        &--1 {
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        &--2 {
+            color: @blue-900;
+            font-size: 24px;
+            font-weight: 900;
+        }
     }
-    // &__box {
-    //     max-width: 1280px;
-    //     margin: 0 auto;
-    //     padding: 0 15px;
-    // }
-    // &__list {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    // }
-    // &__item {
-    //     width: 443px;
-    //     height: 240px;
-    //     &--1 {
-    //         background-color: @cream;
-    //     }
-    //     &--2 {
-    //         background-color: @pink-200;
-    //     }
-    // }
 
-    // &__image {
+    &__text {
+        color: @blue-900;
+        font-size: 21px;
+        font-weight: 300;
+    }
 
-    // }
-    // &__title {
-    //     position: relative;
-    //     width: 220px;
-    //     text-align: center;
-    //     font-size: 20px;
-    //     border-radius: 0 0 4px 4px;
-    //     color: #f91906;
-    //     background-color: white;
-    //     margin: 0 auto;
+    &__button {
+        font-size: 14px;
+        background-color: @blue-600;
+        color: @white;
+        
+        &--1 {
+          padding: 15px;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        &--2 {
+            position: absolute;
+            bottom: 0;
+        }
+    }
 
-    //     &-icon {
-    //         position: absolute;
-    //         top: 4px;
-    //         right: 40px;
-    //         width: 20px;
-    //         height: 20px;
-    //         background-image: url("@{baseDir}/images/alarm.svg");
-    //         background-size: 20px 20px;
-    //         background-repeat: no-repeat;
-    //         background-position: right;
-    //     }
-    // }
+    #banners__btn {
+      box-shadow: 0 4px 0 -2px rgba(3,3,26, .25);
+    }
 }
