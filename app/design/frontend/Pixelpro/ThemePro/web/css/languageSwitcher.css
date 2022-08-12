@@ -8,7 +8,6 @@
     float: left;
     margin-left: 10px;
     border: 1px solid transparent;
-    visibility: hidden;
 }
 
 .lang-flag:hover {

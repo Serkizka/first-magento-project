@@ -11,7 +11,7 @@ COPYING.txt for license details. */ -->
 
 
 
-        <script src="Magento_Catalog::js/my.js"/>
+        <script src="js/my.js"></script>
 
     </head>
 </page>

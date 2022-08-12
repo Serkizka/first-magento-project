@@ -14,20 +14,16 @@
 ?>
 
 <?php if(count($this->getStores())>1): ?>
-<div class="langs-wrapper">
-  <li >
-    <a>stores</a>
-  <div  style="display:none">
+    <div class="langs-wrapper">
+
     <?php foreach ($this->getStores() as $_lang): ?>
-    <?php if ($_lang->getCode() != 'default'): ?>
-    <a
-        class="lang-flag"
-        href="<?php echo $this->getCurrentUrl() . '?___store=' . $_lang->getCode();?>"><img
-        src="<?php echo $this->getViewFileUrl('images/flags/flag_' . $_lang->getCode() . '.png');?>"
-        alt="<?php echo 'could not find image for ' . $_lang->getName() ?>"/></a>
-    <?php endif;?>
+      <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
+        <option id="lang-title" value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->escapeHtml($_lang->getName()) ?></option>
+        <?php if ($_lang->getCode() != 'default'): ?>
+
+        <a class="lang-flag" href="<?php echo $this->getCurrentUrl() . '?___store=' . $_lang->getCode();?>"><img src="<?php echo $this->getViewFileUrl('images/flags/flag_' . $_lang->getCode() . '.png');?>" alt="<?php echo 'could not find image for ' . $_lang->getName() ?>"/></a>
+        
+        <?php endif;?>
     <?php endforeach;?>
     </div>
-    </li>
-</div>
 <?php endif;?>

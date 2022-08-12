@@ -1,5 +1,121 @@
 .popular-products {
-  &__list {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    &__boxgrid {
+        margin-bottom: 16px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 1.25;
+        font-weight: 700;
+    }
+
+    &__txt {
+        color: @blue-600;
+        font-size: 17px;
+        line-height: 1.5;
+        &::before {
+            content: ">";
+            font-size: 14px;
+            display: inline-block;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 245px;
+    }
+    &__image {
+        width: 113px;
+        height: 140px;
+        margin-bottom: 8px;
+    }
+    &__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 75px;
+        width: 140px;
+    }
+    &__subtitle {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .product-item .price-box .price {
+        font-size: 14px;
+        font-weight: 300;
+        color: @red-200;
+    }
+    .product-item .price-box {
+        margin: 0;
+    }
+    &__price-text {
+        display: none;
+    }
+    &__inner {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1;
+    }
+    &__wishlist-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: @white;
+        border-radius: 50%;
+        border: 1.8px solid transparent;
+        transition: border 0.5s, background-color 0.5s;
+        &:hover {
+            border: 1.8px solid @blue-600;
+        }
+        &:active {
+            background-color: @blue-600;
+
+            svg {
+                fill: @white;
+            }
+        }
+        svg {
+            width: 21px;
+            height: 21px;
+            fill: @blue-600;
+        }
+    }
+}
+
+.product-item {
+    position: relative;
     display: flex;
-  }
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    text-align: left;
+    height: 250px;
+    width: 245px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    &:not(:last-child) {
+        margin-right: 16px;
+    }
 }
