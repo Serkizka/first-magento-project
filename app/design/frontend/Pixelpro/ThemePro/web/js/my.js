@@ -1,7 +1,12 @@
-const langTitle = document.getElementById("lang-title");
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("langs-wrapper");
 
+btn.onclick = function () {
+    modal.style.display = "block";
+};
 
-langTitle.addEventListener("click", function () {
- console.log('44444');
-   element.style.setProperty("text-decoration", "line-through");
-});
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
