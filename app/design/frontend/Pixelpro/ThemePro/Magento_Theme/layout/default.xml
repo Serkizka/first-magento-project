@@ -39,13 +39,7 @@
         </referenceContainer>
         <!-- under nav panel line -->
 
-        <referenceContainer name="main">
-            <block
-                class="Magento\Framework\View\Element\Template"
-                name="gifts.everyone"
-                template="Magento_Theme::gifts-everyone.phtml"
-                after="-"/>
-        </referenceContainer>
+
 
     </body>
 </page>
