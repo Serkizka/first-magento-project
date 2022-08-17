@@ -1,6 +1,6 @@
 .materials {
     img {
-      width: 130px;
+        width: 130px;
     }
     .slick-slide {
         &:not(:last-child) {
@@ -29,11 +29,20 @@
         border-radius: 4px;
 
         &:before {
+            content: "<";
             font-size: 25px;
+            font-weight: 800;
             line-height: 1.25;
             color: @blue-600;
         }
-
     }
+    .slick-next {
+        &::before {
+            content: ">";
+        }
+    }
+}
 
+.slick-track {
+    display: flex;
 }
