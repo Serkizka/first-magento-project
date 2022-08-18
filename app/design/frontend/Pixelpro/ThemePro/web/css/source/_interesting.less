@@ -1,0 +1,45 @@
+.interesting {
+    margin-bottom: 16px;
+
+    &__title {
+        font-size: 20px;
+        line-height: 1.25;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__image {
+        width: 373px;
+        height: 186px;
+        margin-bottom: 8px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        &--1 {
+            background-image: url("@{baseDir}images/interesting/1.jpg");
+        }
+        &--2 {
+            background-image: url("@{baseDir}images/interesting/2.jpg");
+        }
+        &--3 {
+            background-image: url("@{baseDir}images/interesting/3.png");
+        }
+    }
+    &__subtitle {
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 600;        
+      letter-spacing: 0.6px;
+    }
+    &__text {
+        font-size: 14px;
+        line-height: 1.5;
+        letter-spacing: 0.6px;
+    }
+}

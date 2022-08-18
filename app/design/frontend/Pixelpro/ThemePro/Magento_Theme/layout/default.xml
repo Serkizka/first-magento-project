@@ -39,7 +39,12 @@
         </referenceContainer>
         <!-- under nav panel line -->
 
-
+        <referenceContainer name="page.wrapper">
+            <block
+                class="Magento\Framework\View\Element\Template"
+                name="navigation.footer"
+                template="Magento_Theme::navigation-footer.phtml"/>
+        </referenceContainer>
 
     </body>
 </page>
