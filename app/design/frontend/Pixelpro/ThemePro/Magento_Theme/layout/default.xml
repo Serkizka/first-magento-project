@@ -46,5 +46,22 @@
                 template="Magento_Theme::navigation-footer.phtml"/>
         </referenceContainer>
 
+        <!-- footer -->
+
+        <referenceBlock name="form.subscribe" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        
+        <referenceContainer
+            name="footer"
+            label="Page Footer"
+            htmlTag="div"
+            htmlClass="footer content">
+
+            <block class="Magento\Framework\View\Element\Template" name="footer-top" template="Magento_Theme::html/footer-top.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="footer-middlle" template="Magento_Theme::html/footer-middle.phtml"/>
+            
+        </referenceContainer>
+        <!-- footer -->
+
     </body>
 </page>

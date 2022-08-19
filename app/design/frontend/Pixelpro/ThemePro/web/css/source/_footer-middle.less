@@ -1,0 +1,30 @@
+.footer-middle {
+    &__list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 235px;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 147px;
+        max-width: 211px;
+        width: 100%;
+        &:not(:last-child) {
+            padding-right: 24px;
+        }
+        svg {
+            width: 21px;
+            height: 21px;
+            fill: @blue-900;
+        }
+    }
+
+    &__line {
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+}

@@ -1,0 +1,36 @@
+.footer.content {
+    padding: 0;
+}
+.footer-top {
+    height: 127px;
+    &__container {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background-color: @blue-900;
+    }
+    &__title {
+        color: @white;
+    }
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 127px;
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        max-width: 384px;
+        width: 100%;
+        color: @white;
+
+        svg {
+            margin-right: 24px;
+            height: 42px;
+            width: 42px;
+            fill: transparent;
+            stroke: @white;
+        }
+    }
+}

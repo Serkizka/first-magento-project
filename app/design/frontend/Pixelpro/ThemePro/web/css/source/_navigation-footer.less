@@ -1,20 +1,36 @@
 .navigation-footer {
-  &__box {
-    display: flex;
-  }
-
-  &__list {
-    max-width: 108px;
-    &:not(:last-child) {
-      margin-right: 50px;
-    }
-  }
-
-  &__item {
     margin-bottom: 16px;
-  }
+    height: 100%;
+    &__box {
+        display: flex;
+        margin-bottom: 8px;
+        font-weight: 700;
+        line-height: 1.25;
+        font-size: 20px;
+    }
 
-  &__text {
-    line-height: 1.5;
-  }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1152px;
+    }
+
+    &__item {
+        margin-bottom: 24px;
+        width: auto;
+    }
+
+    &__list {
+        display: block;
+        height: auto;
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+
+    &__link {
+      width: auto;
+      height: auto;
+        line-height: 1.5;
+    }
 }
