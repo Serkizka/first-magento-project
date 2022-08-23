@@ -1,10 +1,13 @@
 .materials {
-    img {
-        width: 130px;
+    max-width: 1240px;
+    padding: 0 10px;
+    margin: 0 auto;
+    &__image {
+        width: 136px;
     }
     .slick-slide {
         &:not(:last-child) {
-            margin-right: 16px;
+            margin-right: 24px;
         }
     }
     &__text {
@@ -17,7 +20,7 @@
     }
 
     .slick-next {
-        right: 17px;
+        right: 0;
     }
 
     .slick-next,
@@ -45,4 +48,6 @@
 
 .slick-track {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

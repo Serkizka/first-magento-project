@@ -44,12 +44,13 @@ $_helper = $block->getData('outputHelper');
      */
     $pos = $block->getPositioned();
     ?>
-    <div class="products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
-        <ol class="products list items product-items">
+    <div class="catalogue-products__wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
+
+        <ul class="catalogue-products__list">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
-            <li class="item product product-item">
-                <div class="product-item-info"
+            <li class="catalogue-products__item">
+                <div class="catalogue-products__info"
                      id="product-item-info_<?= /* @noEscape */ $_product->getId() ?>"
                      data-container="product-<?= /* @noEscape */ $viewMode ?>">
                     <?php
@@ -61,14 +62,15 @@ $_helper = $block->getData('outputHelper');
                     ?>
                     <?php // Product Image ?>
                     <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
-                       class="product photo product-item-photo"
+                    id="catalogue-products__photo"
+                       class="catalogue-products__photo"
                        tabindex="-1">
                         <?= $productImage->toHtml() ?>
                     </a>
-                    <div class="product details product-item-details">
+                    <div class="catalogue-products--details">
                         <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
-                        <strong class="product name product-item-name">
-                            <a class="product-item-link"
+                        <strong class="catalogue-products__name">
+                            <a class="catalogue-products__link"
                                href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
                                 <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
                             </a>
@@ -78,7 +80,7 @@ $_helper = $block->getData('outputHelper');
 
                         <?= $block->getProductDetailsHtml($_product) ?>
 
-                        <div class="product-item-inner">
+                        <div class="catalogue-products__inner">
                             <div class="product actions product-item-actions">
                                 <div class="actions-primary">
                                     <?php if ($_product->isSaleable()):?>
@@ -157,7 +159,7 @@ $_helper = $block->getData('outputHelper');
                 ) : '' ?>
             </li>
             <?php endforeach; ?>
-        </ol>
+        </ul>
     </div>
     <?= $block->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
     <?php // phpcs:ignore Magento2.Legacy.PhtmlTemplate ?>

@@ -39,13 +39,6 @@
         </referenceContainer>
         <!-- under nav panel line -->
 
-        <referenceContainer name="page.wrapper">
-            <block
-                class="Magento\Framework\View\Element\Template"
-                name="navigation.footer"
-                template="Magento_Theme::navigation-footer.phtml"/>
-        </referenceContainer>
-
         <!-- footer -->
 
         <referenceBlock name="form.subscribe" remove="true"/>
@@ -59,7 +52,9 @@
 
             <block class="Magento\Framework\View\Element\Template" name="footer-top" template="Magento_Theme::html/footer-top.phtml"/>
             <block class="Magento\Framework\View\Element\Template" name="footer-middlle" template="Magento_Theme::html/footer-middle.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="footer-bottom" template="Magento_Theme::html/footer-bottom.phtml"/>
             
+            <referenceBlock name="copyright" remove="true"/>
         </referenceContainer>
         <!-- footer -->
 
