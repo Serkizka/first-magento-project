@@ -44,8 +44,7 @@ $_helper = $block->getData('outputHelper');
      */
     $pos = $block->getPositioned();
     ?>
-    <div class="catalogue-products__wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
-
+    <div class="catalogue-products__wrapper">
         <ul class="catalogue-products__list">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
@@ -62,25 +61,38 @@ $_helper = $block->getData('outputHelper');
                     ?>
                     <?php // Product Image ?>
                     <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
-                    id="catalogue-products__photo"
                        class="catalogue-products__photo"
                        tabindex="-1">
                         <?= $productImage->toHtml() ?>
                     </a>
-                    <div class="catalogue-products--details">
+                    <div class="product details product-item-details">
                         <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
-                        <strong class="catalogue-products__name">
-                            <a class="catalogue-products__link"
+                        <a class="catalogue-products__name">
+                            <strong class="catalogue-products__title"
                                href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
                                 <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
-                            </a>
-                        </strong>
+                            </strong>
+                            <p class="catalogue-products__link">
+                                <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
+                            </p>
+                        </a>
+
+                            <div class="catalogue-products__description">
+                                <?php echo $this->helper('Magento\Catalog\Helper\Output')->productAttribute($_product, $_product->getDescription(), 'description') ?>
+                            </div>
+                            
+                        <!-- Review -->
                         <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
                         <?= /* @noEscape */ $block->getProductPrice($_product) ?>
+                        <!-- Review -->
 
+                        <!-- Products characteristics -->
                         <?= $block->getProductDetailsHtml($_product) ?>
+                        <!-- Products characteristics -->
 
-                        <div class="catalogue-products__inner">
+                        
+
+                        <div class="product-item-inner">
                             <div class="product actions product-item-actions">
                                 <div class="actions-primary">
                                     <?php if ($_product->isSaleable()):?>
@@ -108,7 +120,7 @@ $_helper = $block->getData('outputHelper');
                                                     title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
                                                     class="action tocart primary"
                                                     disabled>
-                                                <span><?= $escaper->escapeHtml(__('Add to Cart')) ?></span>
+                                               <img class="catalogue-products__addto" src="<?= $block->getViewFileUrl('images/page-list-icon/cart.svg'); ?>" alt="add to cart image" />
                                             </button>
                                         </form>
                                     <?php else:?>

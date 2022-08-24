@@ -10,19 +10,39 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
     }
-    &__item {
-        }
-
     &__info {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: 604px;
         img {
-            width: 180px;
+            width: 200px;
             height: 200px;
         }
     }
-    &__link {
-      
+    &__name {
+        display: block;
+        margin-bottom: 16px;
     }
+    &__title {
+        display: block;
+    }
+    &__description {
+        margin-bottom: 10px;
+        height: 20px;
+        overflow: hidden;
+        color: @gray;
+    }
+    &__addto {
+        img {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}
+
+.price-box {
+    font-size: 26px;
+    font-weight: 700;
+    color: @red;
 }
