@@ -3,20 +3,28 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        &:active {
-          color: @blue-600;
-        }
+        cursor: pointer;
         &:hover {
-          color: @blue-600;
+            color: @blue-600;
+        }
+        .active {
+            color: pink;
+        }
+        #text {
+            margin-right: 8px;
         }
     }
 
     &__checkbox {
-      width: 24px;
-      height: 24px;
-          &:hover {
-            background-color: pink;
-          }
-        }
+        width: 24px;
+        height: 24px;
+        padding: 8px;
+        margin-right: 8px;
+        border: 2px solid @blue-600;
+    }
 
+    input {
+        cursor: pointer;
+        background-color: violet;
+    }
 }

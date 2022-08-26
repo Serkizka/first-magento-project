@@ -7,24 +7,19 @@
 // @codingStandardsIgnoreFile
 
 ?>
-<?php
-/**
- * Template for filter items block
- *
- * @var $block \Magento\LayeredNavigation\Block\Navigation\FilterRenderer
- */
-?>
+
 
 <ul class="style">
     <?php foreach ($filterItems as $filterItem): ?>
         <li class="style__item">
             <?php if ($filterItem->getCount() > 0): ?>
                 <form class="style__form">
-                  <label class="style__label">
+                  <label class="style__label active">
                     <input class="style__checkbox" type="checkbox" name="#" value="yes">
 
                     
                     <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
+
                     <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
                     
 
