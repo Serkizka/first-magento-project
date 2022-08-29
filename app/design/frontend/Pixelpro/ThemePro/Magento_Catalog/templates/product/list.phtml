@@ -47,18 +47,7 @@ $_helper = $block->getData('outputHelper');
     <div class="catalogue-products__wrapper">
         <ul class="catalogue-products__list">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
-
-            <!-- add text for each third product -->
-            <?php foreach ($_productCollection as $_product): 
-            $position_item = 0;
-              $position_item++;
-              if ($position_item == 3) {
-                $add_text=__('jhhgkgkg');
-              }
-              
-              ?>
-              <!-- add text for each third product -->
-
+            <?php foreach ($_productCollection as $_product): ?>
 
             <li class="catalogue-products__item">
                 <div class="catalogue-products__info"
@@ -71,6 +60,7 @@ $_helper = $block->getData('outputHelper');
                             . 'top:' . $productImage->getHeight() . 'px;';
                     }
                     ?>
+
                     <?php // Product Image ?>
                     <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
                        class="catalogue-products__photo"

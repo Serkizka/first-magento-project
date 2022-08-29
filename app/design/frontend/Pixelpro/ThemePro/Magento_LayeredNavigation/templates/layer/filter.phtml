@@ -8,33 +8,81 @@
 
 ?>
 
+<?php if (count($filterItems) > 3): ?>
+<?php foreach ($filterItems as $filterItem): ?>
+<ul class="filters">
 
-<ul class="style">
-    <?php foreach ($filterItems as $filterItem): ?>
-        <li class="style__item">
-            <?php if ($filterItem->getCount() > 0): ?>
-                <form class="style__form">
-                  <label class="style__label active">
-                    <input class="style__checkbox" type="checkbox" name="#" value="yes">
+    <li class="filters__item">
+        <?php if ($filterItem->getCount() > 0): ?>
+        <form class="filters__form">
+            <label class="filters__label active">
+                <input class="filters__checkbox" type="checkbox" name="#" value="yes">
 
-                    
-                    <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
-
-                    <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
-                    
-
-                    <span class="style__count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?><span class="filter-count-label">
-                    <?php if ($filterItem->getCount() == 1):?> <?php /* @escapeNotVerified */ echo __('item')?><?php else:?> <?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
-                    <?php endif; ?>
-                </label>
-            <?php else:?>
                 <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
+
                 <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
-                    <span class="count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?><span class="filter-count-label">
-                        <?php if ($filterItem->getCount() == 1):?><?php /* @escapeNotVerified */ echo __('item')?><?php else:?><?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
-                          </form>
+
+                <span class="filters__count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?>
+                    <span class="filter-count-label">
+                        <?php if ($filterItem->getCount() == 1):?>
+                        <?php /* @escapeNotVerified */ echo __('item')?>
+                    <?php else:?>
+                        <?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
                 <?php endif; ?>
-            <?php endif; ?>
-        </li>
-    <?php endforeach ?>
+            </label>
+
+        <?php else:?>
+            <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
+            <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+            <span class="count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?>
+                <span class="filter-count-label">
+                    <?php if ($filterItem->getCount() == 1):?><?php /* @escapeNotVerified */ echo __('item')?>
+                <?php else:?><?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
+        </form>
+        <?php endif; ?>
+        <?php endif; ?>
+    </li>
+
 </ul>
+<?php endforeach ?>
+<button>SHOW MORE</button>
+
+<?php else: ?>
+<?php foreach ($filterItems as $filterItem): ?>
+<ul class="filters">
+
+    <li class="filters__item">
+        <?php if ($filterItem->getCount() > 0): ?>
+        <form class="filters__form">
+            <label class="filters__label active">
+                <input class="filters__checkbox" type="checkbox" name="#" value="yes">
+
+                <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
+
+                <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+
+                <span class="filters__count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?>
+                    <span class="filter-count-label">
+                        <?php if ($filterItem->getCount() == 1):?>
+                        <?php /* @escapeNotVerified */ echo __('item')?>
+                    <?php else:?>
+                        <?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
+                <?php endif; ?>
+            </label>
+
+        <?php else:?>
+            <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
+            <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+            <span class="count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?>
+                <span class="filter-count-label">
+                    <?php if ($filterItem->getCount() == 1):?><?php /* @escapeNotVerified */ echo __('item')?>
+                <?php else:?><?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
+        </form>
+        <?php endif; ?>
+        <?php endif; ?>
+    </li>
+
+</ul>
+<?php endforeach ?>
+
+<?php endif; ?>
