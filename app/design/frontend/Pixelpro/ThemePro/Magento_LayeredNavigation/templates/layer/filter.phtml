@@ -9,14 +9,15 @@
 ?>
 
 <?php if (count($filterItems) > 3): ?>
-<?php foreach ($filterItems as $filterItem): ?>
-<ul class="filters">
+  <ul class="filters">
+  <?php foreach ($filterItems as $filterItem): ?>
 
     <li class="filters__item">
         <?php if ($filterItem->getCount() > 0): ?>
         <form class="filters__form">
             <label class="filters__label active">
-                <input class="filters__checkbox" type="checkbox" name="#" value="yes">
+                <input class="filters__checkbox" type="checkbox" name="#" value="yes" onclick='window.location.assign("<?php echo $escaper->escapeUrl($filterItem->getUrl()) ?>")'/>
+
 
                 <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
 
@@ -43,8 +44,8 @@
         <?php endif; ?>
     </li>
 
+    <?php endforeach ?>
 </ul>
-<?php endforeach ?>
 <button>SHOW MORE</button>
 
 <?php else: ?>
