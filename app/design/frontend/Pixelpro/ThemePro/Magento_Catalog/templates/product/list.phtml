@@ -85,6 +85,16 @@ $_helper = $block->getData('outputHelper');
 
 <!-- Add TO COMPARE -->
 
+    <!-- some text -->
+    <?php if ($product_counter % 3 == 0): ?>
+    <p>SUPER PRODUCT</p>
+
+    <?php
+    $product_counter++
+    ?>
+    <?php endif; ?>
+    <!-- some text -->
+
 <div class="catalogue-products__details">
     <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
     <a class="catalogue-products__name">
@@ -170,28 +180,7 @@ $_helper = $block->getData('outputHelper');
                 <?php endif; ?>
                  </div>
                 
-                <!-- нема -->
-    <?php if ($product_counter % 3 == 0): ?>
-    <div class="product-item-inner">
-        <div class="catalogue-products__box">
-            <div class="catalogue-products__inner">
-                <?php if ($_product->isSaleable()):?>
-                <?php $postParams = $block->getAddToCartPostParams($_product); ?>
-                
-                    <p>koloooooooooooooooooooooooooo</p>
 
-                <?php
-                  $product_counter++
-                  ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-    <?php endif; ?>
-    <!-- нема -->
-
-
- 
             <?= ($pos && strpos($pos, $viewMode . '-primary')) ?
                                         /* @noEscape */ $secureRenderer->renderStyleAsTag(
                                             $position,
