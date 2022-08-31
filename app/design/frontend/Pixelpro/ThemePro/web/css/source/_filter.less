@@ -15,21 +15,18 @@
         }
     }
 
-    &__checkbox {
-      &:after {
+    input.filters__checkbox[type="checkbox"] {
+        appearance: none;
         width: 24px;
         height: 24px;
-        padding: 8px;
-        background-color: $white;
-        color: aqua;
-      }
-      input [type=checkbox] {
-        width: 24px;
-        height: 24px;
-        padding: 8px;
         margin-right: 8px;
-        border: 2px solid @blue-600;
-      }
+        border: 1px solid rgba(179, 179, 186, 0.5);
+        &:hover {
+          border: 2px solid @blue-600;
+        }
+    }
 
+    &__count {
+      margin-left: 8px;
     }
 }

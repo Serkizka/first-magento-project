@@ -71,7 +71,6 @@ $_helper = $block->getData('outputHelper');
                     </a>
 
                     <!-- Add TO COMPARE -->
-
                     <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare'); ?>
                     <div>
                                 <a href="#"
@@ -79,11 +78,10 @@ $_helper = $block->getData('outputHelper');
                                    title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
                                    aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
                                    data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_product); ?>' role="button">
-        <span><?php /* @escapeNotVerified */ echo __('Add to Compare') ?></span>
-    </a>
-</div>
-
-<!-- Add TO COMPARE -->
+                                  <span><?php /* @escapeNotVerified */ echo __('Vergelijk met andere artikelen') ?></span>
+                                </a>
+                    </div>
+                    <!-- Add TO COMPARE -->
 
     <!-- some text -->
     <?php if ($product_counter % 3 == 0): ?>
