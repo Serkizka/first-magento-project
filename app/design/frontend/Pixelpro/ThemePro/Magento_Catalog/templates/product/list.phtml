@@ -63,7 +63,7 @@ $_helper = $block->getData('outputHelper');
                         }
                         ?>
 
-                      <div class="catalogue-products__box">
+                      <div class="catalogue-products__box-image">
                         <?php // Product Image ?>
                         <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
                            class="catalogue-products__photo"
@@ -85,36 +85,48 @@ $_helper = $block->getData('outputHelper');
                         <!-- Add TO COMPARE -->
                       </div>
 
-                        <div class="catalogue-products__box-description">
+                        <div class="catalogue-products__box-descr">
                         <div class="catalogue-products__details">
                             <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
                             <a class="catalogue-products__name">
-                                <strong
-                                    class="catalogue-products__title"
+                                <p
+                                    class="catalogue-products__text"
                                     href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
                                     <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
-                                </strong>
+                                </p>
                                 <p class="catalogue-products__link">
                                     <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
                                 </p>
                             </a>
 
-                            <div class="catalogue-products__description">
-                                <?php echo $this->helper('Magento\Catalog\Helper\Output')->productAttribute($_product, $_product->getDescription(), 'description') ?>
-                            </div>
-
                             <!-- Review -->
                             <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
                             <!-- Review -->
+
+                          <div class="catalogue-products__text-more">
+                              <div class="catalogue-products__description product description product-item-description">
+                              <?php echo $this->helper('Magento\Catalog\Helper\Output')->productAttribute($_product, $_product->getDescription(), 'description') ?>
+                                <?= /* @noEscape */ $_helper->productAttribute(
+                                    $_product,
+                                    $_product->getShortDescription(),
+                                    'short_description'
+                                ) ?>
+                            </div>
+                                <button class="catalogue-products__button-more a-btn" href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
+                                title="<?= /* @noEscape */ $_productNameStripped ?>"
+                                class="action more"><?= $escaper->escapeHtml(__('Meer')) ?>
+                                </button>
+                          </div>
 
                             <!-- Products characteristics -->
                             <?= $block->getProductDetailsHtml($_product) ?>
                             <!-- Products characteristics -->
                         </div>
 
+
                             <div class="product-item-inner">
                                 <div class="catalogue-products__box">
-                                    <div class="catalogue-products__inner">
+                                    <div class="catalogue-products__button-price">
 
                                         <?php if ($_product->isSaleable()):?>
                                             <?php $postParams = $block->getAddToCartPostParams($_product); ?>
@@ -133,14 +145,14 @@ $_helper = $block->getData('outputHelper');
 
                                                 <!-- some text -->
                                                 <?php if ($product_counter % 3 == 0): ?>
-                                                    <span>SUPER PRODUCT</span>
+                                                    <span class="catalogue-products__some-text">SUPER PRODUCT</span>
 
                                                     <?php
                                                     $product_counter++
                                                     ?>
                                                 <?php endif; ?>
                                                 <!-- some text -->
-
+                                                  <div class="catalogue-products__btn">
                                                 <button
                                                     type="submit"
                                                     title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
@@ -173,6 +185,7 @@ $_helper = $block->getData('outputHelper');
                                                         </a>
                                                     </li>
                                                 </ul>
+                                                </div>
                                             </form>
   <?php else:?>
                 <?php if ($_product->isAvailable()):?>
@@ -184,7 +197,7 @@ $_helper = $block->getData('outputHelper');
                 <?php endif; ?>
                 <?php endif; ?>
                  </div>
-                
+
 
             <?= ($pos && strpos($pos, $viewMode . '-primary')) ?
                                         /* @noEscape */ $secureRenderer->renderStyleAsTag(
@@ -199,18 +212,7 @@ $_helper = $block->getData('outputHelper');
                                         ) : '' ?>
         </div>
 
-                          <?php if ($showDescription): ?>
-                            <div class="product description product-item-description">
-                                <?= /* @noEscape */ $_helper->productAttribute(
-                                    $_product,
-                                    $_product->getShortDescription(),
-                                    'short_description'
-                                ) ?>
-                                <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
-                                title="<?= /* @noEscape */ $_productNameStripped ?>"
-                                class="action more"><?= $escaper->escapeHtml(__('Learn More')) ?></a>
-                            </div>
-                        <?php endif; ?>
+
                     </div>
                     </div>
                 </div>
@@ -236,3 +238,4 @@ $_helper = $block->getData('outputHelper');
 }
 </script>
 <?php endif; ?>
+

@@ -55,3 +55,11 @@
         align-items: center;
     }
 }
+
+.navigation .level0.active > a:not(.ui-state-active), .navigation .level0.has-active > a:not(.ui-state-active) {
+  border-color: @blue-600;
+}
+
+.navigation .submenu:not(:first-child) .active > a {
+  border-color: @blue-600;
+}

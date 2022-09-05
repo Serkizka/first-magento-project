@@ -87,16 +87,6 @@
     // }
 }
 
-.price-box {
-    font-size: 26px;
-    font-weight: 700;
-    color: @red;
-}
-.product-image-photo {
-    width: 200px;
-    height: 200px;
-}
-
 .catalog-category-view,
 .catalogsearch-result-index {
     //for grid and list
@@ -108,16 +98,12 @@
         }
         &__info {
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
         }
-        
+
         &__name {
-            display: block;
+            display: inline-block;
             margin-bottom: 16px;
-        }
-        &__title {
-            display: block;
         }
         &__description {
             margin-bottom: 10px;
@@ -188,6 +174,7 @@
                 gap: 24px;
             }
             &__info {
+                flex-direction: column;
                 height: 604px;
             }
             &__description {
@@ -209,15 +196,74 @@
                 display: flex;
                 flex-direction: column;
             }
-            &__box-description {
+            &__info {
+                justify-content: flex-start;
+            }
+            &__text {
+                margin-bottom: 4px;
+            }
+            &__link {
+                font-weight: 600;
+            }
+            &__box-descr {
                 display: flex;
             }
+            &__details {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
             &__description {
-                height: 85px;
+                margin: 0 20px 0 0;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                width: 450px;
+                color: @darkColor;
+                cursor: pointer;
+            }
+            &__button-more {
+              color: @blue-600;
+            }
+            &__text-more {
+                display: flex;
+                margin-right: 40px;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+            &__some-text {
+                margin-bottom: 10px;
+                color: @lightGreen;
             }
             &__form {
                 flex-direction: column;
             }
+            &__btn {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
         }
     }
+}
+
+.price-box {
+    font-size: 26px;
+    font-weight: 700;
+    color: @red;
+}
+.product-image-photo {
+    width: 200px;
+    height: 250px;
+}
+
+.product-image-wrapper {
+    margin: 0;
+}
+
+.product-item-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
