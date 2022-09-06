@@ -39,6 +39,8 @@
         </referenceContainer>
         <!-- under nav panel line -->
 
+        <move element="breadcrumbs" destination="main.content" before="-"/>
+
         <!-- footer -->
 
         <referenceBlock name="form.subscribe" remove="true"/>

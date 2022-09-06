@@ -71,12 +71,12 @@ use Magento\Framework\App\Action\Action;
                                 <?php if ($showCart): ?>
 
                                 <?php endif; ?>
-                                <?php if ($showWishlist || $showCompare): ?>
+                                <?php if ($showWishlist): ?>
                                 <div class="popular-products__actions-secondary" data-role="add-to-links">
                                     <?php if ($this->helper(\Magento\Wishlist\Helper\Data::class)->isAllow() && $showWishlist): ?>
                                     <ul class="popular-products__wishlist-list">
                                         <li class="popular-products__wishlist-item" data-bind="scope: 'wishlist'">
-                                            <a class="popular-products__wishlist-link" href="#">
+                                            <a class="popular-products__wishlist-link" href="#" data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_item) ?>' data-action="add-to-wishlist" title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
                                                 <svg
                                                     class="popular-products__wishlist-image"
                                                     version="1.1"
