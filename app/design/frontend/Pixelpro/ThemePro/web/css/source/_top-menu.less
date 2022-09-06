@@ -56,10 +56,20 @@
     }
 }
 
-.navigation .level0.active > a:not(.ui-state-active), .navigation .level0.has-active > a:not(.ui-state-active) {
-  border-color: @blue-600;
+.navigation {
+    .level0.active > a:not(.ui-state-active),
+    .navigation .level0.has-active > a:not(.ui-state-active) {
+        border-color: @blue-600;
+    }
 }
 
-.navigation .submenu:not(:first-child) .active > a {
+.navigation {
+    .submenu:not(:first-child) .active > a {
+        border-color: @blue-600;
+    }
+}
+
+.level0.active > .level-top,
+.navigation .level0.has-active > .level-top {
   border-color: @blue-600;
 }

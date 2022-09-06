@@ -75,7 +75,7 @@ $_helper = $block->getData('outputHelper');
                         <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare'); ?>
                         <div>
                             <a href="#"
-                               class="action tocompare"
+                               class="action tocompare catalogue-products__button-compare"
                                title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
                                aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
                                data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_product); ?>' role="button">
@@ -86,15 +86,15 @@ $_helper = $block->getData('outputHelper');
                       </div>
 
                         <div class="catalogue-products__box-descr">
-                        <div class="catalogue-products__details">
+                        <div class="catalogue-products__descr-inner">
                             <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
                             <a class="catalogue-products__name">
                                 <p
-                                    class="catalogue-products__text"
+                                    class="catalogue-products__text a-btn"
                                     href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
                                     <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
                                 </p>
-                                <p class="catalogue-products__link">
+                                <p class="catalogue-products__link a-btn">
                                     <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
                                 </p>
                             </a>
@@ -126,7 +126,7 @@ $_helper = $block->getData('outputHelper');
 
                             <div class="product-item-inner">
                                 <div class="catalogue-products__box">
-                                    <div class="catalogue-products__button-price">
+                                    <div class="catalogue-products__box3">
 
                                         <?php if ($_product->isSaleable()):?>
                                             <?php $postParams = $block->getAddToCartPostParams($_product); ?>
@@ -156,7 +156,7 @@ $_helper = $block->getData('outputHelper');
                                                 <button
                                                     type="submit"
                                                     title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
-                                                    class="catalogue-products__button action tocart primary"
+                                                    class="catalogue-products__button-cart action tocart primary"
                                                     disabled="disabled">
                                                     <svg
                                                         class="catalogue-products__cart-icon"

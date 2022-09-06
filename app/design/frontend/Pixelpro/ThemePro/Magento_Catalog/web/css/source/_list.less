@@ -1,92 +1,3 @@
-.catalogue-products {
-    // &__wrapper {
-    //     margin: 0 auto;
-    //     padding: 0 15px;
-    //     max-width: 1220px;
-    // }
-
-    // &__list {
-    //     display: grid;
-    //     grid-template-columns: repeat(3, 1fr);
-    //     gap: 24px;
-    // }
-    // &__info {
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: space-between;
-    //     height: 604px;
-    // }
-
-    // &__name {
-    //     display: block;
-    //     margin-bottom: 16px;
-    // }
-    // &__title {
-    //     display: block;
-    // }
-    // &__description {
-    //     margin-bottom: 10px;
-    //     height: 20px;
-    //     overflow: hidden;
-    //     color: @gray;
-    // }
-    // &__form {
-    //     display: flex;
-    //     justify-content: left;
-    // }
-    // &__button {
-    //     display: flex !important;
-    //     align-items: center;
-    //     justify-content: space-around;
-    //     margin-right: 10px;
-    //     width: 82px;
-    //     height: 48px;
-    //     background-color: @yellow-600 !important;
-    //     border: 1px solid transparent !important;
-    //     box-shadow: 0 4px 0 -2px rgba(3,3,26,.25) !important;
-    //     transition: background-color 0.5s;
-    //     &::before {
-    //         content: "+";
-    //         font-size: 31px;
-    //         color: @darkColor;
-    //     }
-    //     &:hover {
-    //         background-color: @yellow-400 !important;
-    //     }
-    // }
-    // &__wishlist-link {
-    //     height: 21px;
-    //     width: 24px;
-    // }
-
-    // &__cart-icon {
-    //     height: 21px;
-    //     width: 21px;
-    //     stroke-width: 3;
-    //     stroke: @darkColor;
-    //     fill: transparent;
-    // }
-    // &__wishlist-item {
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     border: 2px solid transparent;
-    //     width: 48px;
-    //     height: 48px;
-    //     transition: border 0.5s;
-    //     &:hover {
-    //         border: 2px solid @blue-600;
-    //     }
-    // }
-    // &__wish-icon {
-    //     width: 23px;
-    //     height: 21px;
-    //     fill: transparent;
-    //     stroke-width: 2;
-    //     stroke: @blue-600;
-    // }
-}
-
 .catalog-category-view,
 .catalogsearch-result-index {
     //for grid and list
@@ -100,21 +11,44 @@
             display: flex;
             justify-content: space-between;
         }
-
         &__name {
             display: inline-block;
             margin-bottom: 16px;
         }
+        &__text {
+            margin-bottom: 4px;
+        }
+        &__link {
+            font-weight: 600;
+        }
         &__description {
-            margin-bottom: 10px;
+            margin: 0 20px 0 0;
             overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            width: 450px;
             color: @gray;
+            cursor: pointer;
+        }
+        &__button-more {
+            color: @blue-600;
+        }
+        &__some-text {
+            margin-bottom: 10px;
+            color: @lightGreen;
         }
         &__form {
             display: flex;
+            flex-direction: column;
             justify-content: left;
         }
-        &__button {
+        &__btn {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        &__button-cart {
             display: flex !important;
             align-items: center;
             justify-content: space-around;
@@ -177,8 +111,8 @@
                 flex-direction: column;
                 height: 604px;
             }
-            &__description {
-                height: 20px;
+            &__box-image {
+              margin-bottom: 10px;
             }
         }
         .product-item-inner {
@@ -195,54 +129,23 @@
             &__list {
                 display: flex;
                 flex-direction: column;
-            }
+            }price
             &__info {
                 justify-content: flex-start;
-            }
-            &__text {
-                margin-bottom: 4px;
-            }
-            &__link {
-                font-weight: 600;
             }
             &__box-descr {
                 display: flex;
             }
-            &__details {
+            &__descr-inner {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-            }
-            &__description {
-                margin: 0 20px 0 0;
-                overflow: hidden;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                width: 450px;
-                color: @darkColor;
-                cursor: pointer;
-            }
-            &__button-more {
-              color: @blue-600;
             }
             &__text-more {
                 display: flex;
                 margin-right: 40px;
                 justify-content: space-between;
                 align-items: flex-end;
-            }
-            &__some-text {
-                margin-bottom: 10px;
-                color: @lightGreen;
-            }
-            &__form {
-                flex-direction: column;
-            }
-            &__btn {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
             }
         }
     }
