@@ -1,0 +1,66 @@
+.breadcrumbs {
+    &__list {
+        display: flex;
+        align-items: center;
+        #breadcrumbs-link {
+            margin-right: 3px;
+            color: #03031a;
+            text-decoration: transparent;
+            transition: color 0.5s, text-decoration 0.5s;
+            &:hover {
+                text-decoration: underline;
+            }
+            &:active {
+                color: @blue-600;
+            }
+        }
+        #breadcrumbs-back {
+            padding: 2px 14px;
+            color: @blue-600;
+            border: 1px solid @gray-100;
+            transition: 0.5s border;
+
+            &::before {
+                content: '<';
+                margin-right: 7px;
+                font-size: 16px;
+            }
+
+            &:hover {
+                border: 1px solid @blue-600;
+                text-decoration: transparent;
+            }
+        }
+        svg {
+            display: block;
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke-width: 2px;
+            stroke: @darkColor;
+            transition: 0.5s stroke;
+
+            &:hover {
+                stroke: @blue-600;
+            }
+        }
+    }
+    .items > li {
+        margin: 0 5px;
+    }
+    .item {
+        font-size: 12px;
+        &:not(:last-child) {
+            display: flex;
+            align-items: center;
+
+            &::after {
+                margin: 0;
+                font-size: 12px;
+            }
+        }
+    }
+    li:nth-child(2) {
+        padding: 8px;
+    }
+}

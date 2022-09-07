@@ -8,13 +8,14 @@
 <div class="breadcrumbs">
     <ul class="breadcrumbs__list items">
         <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" id="breadcrumbs-link" href="javascript:history.go(-1)">Back</a>
+            <a class="breadcrumbs__link" id="breadcrumbs-back" href="javascript:history.go(-1)">Back</a>
         </li>
         <?php foreach ($crumbs as $crumbName => $crumbInfo) : ?>
         <li class="breadcrumbs__item item <?= $block->escapeHtmlAttr($crumbName) ?>">
             <?php if ($crumbInfo['first']) : ?>
             <a
                 class="breadcrumbs__link"
+                id="breadcrumbs-link"
                 href="<?= $block->escapeUrl($crumbInfo['link']) ?>"
                 title="<?= $block->escapeHtml($crumbInfo['title']) ?>">
                 <svg
@@ -32,6 +33,7 @@
         <?php elseif ($crumbInfo['link'] || $crumbInfo['last']) : ?>
             <a
                 class="breadcrumbs__link"
+                id="breadcrumbs-link"
                 href="<?= $block->escapeUrl($crumbInfo['link']) ?>"
                 title="<?= $block->escapeHtml($crumbInfo['title']) ?>">
                 <?= $block->escapeHtml($crumbInfo['label']) ?>
