@@ -1,0 +1,28 @@
+.modes {
+    &__inner {
+        margin-right: 0;
+    }
+    .modes-mode.mode-grid,
+    .modes-mode.mode-list {
+        position: relative;
+        width: 21px;
+        height: 21px;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16.5px;
+            height: 16.5px;
+            color: @blue-600;
+
+            &:hover {
+                color: @blue-600;
+            }
+        }
+    }
+
+}
