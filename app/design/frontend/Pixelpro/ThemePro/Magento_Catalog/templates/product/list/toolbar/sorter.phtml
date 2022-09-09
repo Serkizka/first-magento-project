@@ -13,7 +13,7 @@
 ?>
 <div class="toolbar-sorter__box toolbar-sorter sorter">
     <label class="sorter-label" for="sorter"><?= $block->escapeHtml(__('Sortering')) ?></label>
-        <button class="toolbar-sorter__button sorter-btn-info" id="sorter-open-btn" type="button" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "toggleContainers": "#modal-sorter-info, #toolbar-sorter__overlay"}}'>
+        <button class="toolbar-sorter__button sorter-btn-info" id="sorter-open-btn" type="button" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "toggleContainers": "#toolbar-sorter__modal, #toolbar-sorter__overlay"}}'>
         <svg class="toolbar-sorter__icon" viewBox="0 0 14 14">
             <path fill-rule="evenodd" d="M7 14A7 7 0 117 0a7 7 0 010 14zm-.033-1a6 6 0 100-12 6 6 0 000 12zm-.464-6.984a.512.512 0 01.509-.516h-.024c.283 0 .514.228.515.516l.027 3.968a.512.512 0 01-.509.516h.024a.516.516 0 01-.515-.516l-.027-3.968zM7.031 4.5a.5.5 0 110-1 .5.5 0 010 1z"></path>
         </svg>
@@ -47,5 +47,26 @@
             <span><?= $block->escapeHtml(__('Set Descending Direction')) ?></span>
         </a>
     <?php endif; ?>
-    <div id="sorter-overlay" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "baseToggleClass": "", "toggleContainers": "#modal-sorter-info, #toolbar-sorter__overlay"}}'></div>
+    <div class="sorter-info language-popup" id="toolbar-sorter__modal">
+        <button data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "toggleContainers": "#toolbar-sorter__modal, #toolbar-sorter__overlay"}}'>&times;</button>
+        <h3 class="sorter-info__title">Hoe sorteren werkt</h3>
+        <p class="sorter-info__desc">
+            Artikelen hebben vaak meerdere verkopers. Je ziet per zoekresultaat de verkoper die het beste scoort op leverbelofte, prijs en prestatiescore. Daarnaast sorteren we standaard alle resultaten op populariteit, maar je kunt deze ook zelf sorteren:
+        </p>
+        <ul class="sorter-info__items">
+            <li class="sorter-info__item">
+                <p class="sorter-info__item-title">Populariteit van de artikelen</p>
+                <p class="sorter-info__item-text">
+                    Hiervoor kijken we op verschillende manieren naar hoeveel interesse er is in een artikel. Tussen de resultaten kunnen ook gesponsorde artikelen* verschijnen.
+                </p>
+            </li>
+            <li class="sorter-info__item">
+                <p class="sorter-info__item-title">Prijs</p>
+                <p class="sorter-info__item-text">
+                    Van laag naar hoog of van hoog naar laag.
+                </p>
+            </li>
+    </ul>  
 </div>
+<div class="modal" id="toolbar-sorter__overlay" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "baseToggleClass": "", "toggleContainers": "#toolbar-sorter__modal, #toolbar-sorter__overlay"}}'></div>
+    </div>

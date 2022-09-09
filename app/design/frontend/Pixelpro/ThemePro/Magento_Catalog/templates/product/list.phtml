@@ -73,13 +73,18 @@ $_helper = $block->getData('outputHelper');
 
                         <!-- Add TO COMPARE -->
                         <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare'); ?>
-                        <div>
+                        <div class="catalogue-products__button-compare">
                             <a href="#"
-                               class="action tocompare catalogue-products__button-compare"
+                               class="action tocompare"
                                title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
                                aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
                                data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_product); ?>' role="button">
-        <span><?php /* @escapeNotVerified */ echo __('Vergelijk met andere artikelen') ?></span>
+                          <span
+                              class="catalogue-products__compare-checkbox"
+                              id="catalogue-products__compare-checkbox-<?= /* @noEscape */ $_product->getId()?>">
+                            </span>
+                          <span class="catalogue-products__compare-text"><?php /* @escapeNotVerified */ echo __('Vergelijk met andere artikelen') ?>
+                        </span>
     </a>
 </div>
 <!-- Add TO COMPARE -->
@@ -115,7 +120,7 @@ $_helper = $block->getData('outputHelper');
         </div>
         <button
             class="action more catalogue-products__button-more a-btn"
-            onclick="location.href='<?= $escaper->escapeUrl($_product->getProductUrl()) ?>'"
+            onclick="clickButton()"
             title="<?= /* @noEscape */ $_productNameStripped ?>"><?= $escaper->escapeHtml(__('Meer')) ?>
         </button>
     </div>
@@ -241,7 +246,7 @@ $_helper = $block->getData('outputHelper');
 <?php endforeach; ?>
 </ul>
 </div>
-<?= $block->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
+
 <?php // phpcs:ignore Magento2.Legacy.PhtmlTemplate ?>
 <script type="text/x-magento-init">
 {
@@ -252,4 +257,5 @@ $_helper = $block->getData('outputHelper');
 }
 }
 </script>
+
 <?php endif; ?>

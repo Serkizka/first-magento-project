@@ -21,6 +21,48 @@
         &__link {
             font-weight: 600;
         }
+        &__button {
+            &-compare {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                a {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+        &__compare-checkbox {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border: 1px solid @darkColor;
+            margin-right: 10px;
+        }
+        &__compare-checkbox::before {
+            content: '\e610';
+            display: block;
+            font-family: 'luma-icons';
+            font-size: 12px;
+            text-align: center;
+            color: transparent;
+        }
+
+        &__compare-checkbox:active::before {
+            background-color: @blue-600;
+            color: @white;
+        }
+
+        // &__button-compare::before {
+        //     content: '';
+        //     display: block;
+        //     width: 20px;
+        //     height: 20px;
+        //     border: 1px solid @darkColor;
+        // }
+
         &__description {
             margin: 0 20px 0 0;
             overflow: hidden;
@@ -111,8 +153,13 @@
                 flex-direction: column;
                 height: 604px;
             }
+            &__button {
+              &-compare {
+                justify-content: left;
+              }
+            }
             &__box-image {
-              margin-bottom: 10px;
+                margin-bottom: 10px;
             }
         }
         .product-item-inner {
@@ -129,9 +176,18 @@
             &__list {
                 display: flex;
                 flex-direction: column;
-            }price
+            }
             &__info {
                 justify-content: flex-start;
+            }
+            &__button {
+                &-compare {
+                  max-width: 170px;
+                }
+            }
+
+            &__compare-text {
+                max-width: 115px;
             }
             &__box-descr {
                 display: flex;
