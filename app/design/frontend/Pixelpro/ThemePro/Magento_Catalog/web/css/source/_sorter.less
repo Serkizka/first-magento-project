@@ -14,25 +14,39 @@
 
     #toolbar-sorter__modal {
         display: none;
-        position: absolute;
+    }
+    #toolbar-sorter__modal.active {
+        position: fixed;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         margin: 0 auto;
+        left: 0;
+        right: 0;
         top: 100px;
         padding: 20px;
         width: 50%;
         height: 80%;
+        overflow: hidden;
         border: 1px solid #888;
         border-radius: 20px;
         background-color: #fefefe;
     }
-    #toolbar-sorter__modal.active {
-        display: block;
-    }
     #toolbar-sorter__overlay {
         display: none;
-        width: 100%;
-        height: 100%;
     }
     #toolbar-sorter__overlay.active {
         display: block;
+        position: fixed;
+        z-index: 0;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
     }
 }

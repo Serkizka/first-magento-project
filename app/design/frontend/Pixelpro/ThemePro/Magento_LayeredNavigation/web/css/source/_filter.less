@@ -1,4 +1,9 @@
 .filters {
+
+    &__hidden {
+      display: none;
+    }
+
     &__label {
         display: flex;
         justify-content: flex-start;
@@ -6,9 +11,6 @@
         cursor: pointer;
         &:hover {
             color: @blue-600;
-        }
-        .active {
-            color: pink;
         }
         #text {
             margin-right: 8px;
@@ -22,11 +24,17 @@
         margin-right: 8px;
         border: 1px solid rgba(179, 179, 186, 0.5);
         &:hover {
-          border: 2px solid @blue-600;
+            border: 2px solid @blue-600;
         }
     }
 
     &__count {
-      margin-left: 8px;
+        margin-left: 8px;
+    }
+
+    &__button-more {
+      position: relative;
+      padding: 5px 0 0 24px;
+      font-size: 16px;
     }
 }

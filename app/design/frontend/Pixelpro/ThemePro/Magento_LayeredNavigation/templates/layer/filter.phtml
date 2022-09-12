@@ -10,12 +10,21 @@
 
 
   <ul class="filters">
+  <?php $item_counter = 0; ?>
   <?php foreach ($filterItems as $filterItem): ?>
+    <?php $item_counter++; ?>
 
-    <li class="filters__item">
+
+
+    <li
+    <?php if ($item_counter > 3): ?>
+    class="filters__item filters__hidden filters__show">
+    <?php else:?>
+    class="filters__item">
+    <?php endif; ?>
         <?php if ($filterItem->getCount() > 0): ?>
         <form class="filters__form">
-            <label class="filters__label active">
+            <label class="filters__label">
                 <input class="filters__checkbox" type="checkbox" name="#" value="yes" onclick='window.location.assign("<?php echo $escaper->escapeUrl($filterItem->getUrl()) ?>")'/>
                 <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
                 <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
@@ -33,18 +42,18 @@
             <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
             <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
             <span class="count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?>
-                <span class="filter-count-label">
-                    <?php if ($filterItem->getCount() == 1):?><?php /* @escapeNotVerified */ echo __('item')?>
+                <span class="filter-count-label">filters__hidden == 1):?><?php /* @escapeNotVerified */ echo __('item')?>
                 <?php else:?><?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
         </form>
         <?php endif; ?>
-        <?php endif; ?> 
+
     </li>
 
     <?php endforeach ?>
-
-      <?php if (count($filterItems) > 3): ?>
-         <button>SHOW LESS</button>
-      <?php endif; ?>
 </ul>
+
+      <?php if ($item_counter > 3): ?>
+         <a class="filters__button-more" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "filters__hidden", "baseToggleClass": "active", "toggleContainers": ".filters__show"}}'>Meer</a>
+      <?php endif; ?>
+
 

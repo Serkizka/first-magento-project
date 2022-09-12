@@ -47,7 +47,7 @@
             <span><?= $block->escapeHtml(__('Set Descending Direction')) ?></span>
         </a>
     <?php endif; ?>
-    <div class="sorter-info language-popup" id="toolbar-sorter__modal">
+    <div class="sorter-info" id="toolbar-sorter__modal">
         <button data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "toggleContainers": "#toolbar-sorter__modal, #toolbar-sorter__overlay"}}'>&times;</button>
         <h3 class="sorter-info__title">Hoe sorteren werkt</h3>
         <p class="sorter-info__desc">
@@ -68,5 +68,5 @@
             </li>
     </ul>  
 </div>
-<div class="modal" id="toolbar-sorter__overlay" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "baseToggleClass": "", "toggleContainers": "#toolbar-sorter__modal, #toolbar-sorter__overlay"}}'></div>
+<div id="toolbar-sorter__overlay" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "baseToggleClass": "", "toggleContainers": "#toolbar-sorter__modal, #toolbar-sorter__overlay"}}'></div>
     </div>

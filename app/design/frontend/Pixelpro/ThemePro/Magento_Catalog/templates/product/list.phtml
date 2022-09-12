@@ -118,11 +118,11 @@ $_helper = $block->getData('outputHelper');
             'short_description'
         ) ?>
         </div>
-        <button
+        <a
             class="action more catalogue-products__button-more a-btn"
-            onclick="clickButton()"
+            href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
             title="<?= /* @noEscape */ $_productNameStripped ?>"><?= $escaper->escapeHtml(__('Meer')) ?>
-        </button>
+        </a>
     </div>
 
     <!-- Products characteristics -->
@@ -257,5 +257,4 @@ $_helper = $block->getData('outputHelper');
 }
 }
 </script>
-
 <?php endif; ?>
