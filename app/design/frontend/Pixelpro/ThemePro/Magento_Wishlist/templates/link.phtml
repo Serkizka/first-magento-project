@@ -7,28 +7,28 @@
 /* @var \Magento\Wishlist\Block\Link $block */
 ?>
 
-
-
 <ul class="wishlist__list">
-    <li class="link wishlist" data-bind="scope: 'wishlist'">
-
-        <a class="wishlist__link" <?= /* @noEscape */ $block->getLinkAttributes() ?>>
-            <img class="wishlist__image" src="<?= $block->getViewFileUrl('images/heart.svg'); ?>" alt="wihlist image" width="21" height="21" />
-        </a>
-    </li>
+  <li class="link wishlist" data-bind="scope: 'wishlist'">
+      <a <?= /* @noEscape */ $block->getLinkAttributes() ?>>
+          <!-- ko if: wishlist().counter -->
+          <img class="wishlist__image" src="<?= $block->getViewFileUrl('images/heart.svg'); ?>" alt="wihlist image" width="21" height="21" />
+          <span data-bind="text: wishlist().counter" class="counter qty"></span>
+          <!-- /ko -->
+      </a>
+  </li>
 </ul>
-
 
 <script type="text/x-magento-init">
     {
         "*": {
-            "magento_ui/js/core/app": {
+            "Magento_Ui/js/core/app": {
                 "components": {
                     "wishlist": {
-                        "component": "magento_wishlist/js/view/wishlist"
+                        "component": "Magento_Wishlist/js/view/wishlist"
                     }
                 }
             }
         }
     }
+
 </script>

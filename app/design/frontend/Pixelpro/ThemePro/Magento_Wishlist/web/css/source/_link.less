@@ -1,0 +1,29 @@
+.wishlist {
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-right: 4px;
+        float: right;
+        border-radius: 50%;
+        transition: background-color 0.5s;
+
+        &:hover {
+            color: @white;
+            background-color: rgba(255, 227, 195, 0.986);
+        }
+    }
+}
+
+.link.wishlist .counter {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}

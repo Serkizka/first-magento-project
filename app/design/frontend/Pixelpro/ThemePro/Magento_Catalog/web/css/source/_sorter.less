@@ -1,17 +1,20 @@
 .toolbar-sorter {
     &__box {
         display: flex;
+        justify-content: space-between;
         align-items: center;
     }
     .sorter-label {
         margin-right: 10px;
     }
-    &__button {
+    &__button-info {
         width: 18px;
         height: 18px;
     }
-    &__icon {}
-
+    &__icon {
+        width: 18px;
+        height: 18px;
+    }
     #toolbar-sorter__modal {
         display: none;
     }
@@ -49,4 +52,28 @@
         overflow: auto;
         background-color: rgba(0, 0, 0, 0.4);
     }
+    #sorter {
+        max-width: 175px;
+        width: 100%;
+        padding: 4px 30px 4px 2px;
+        margin-right: 20px;
+        box-shadow: none;
+        background-color: transparent;
+        border-radius: 0;
+        border: 1px solid @lightGray;
+        overflow: hidden;
+        transition: border 0.5s;
+    }
+    #sorter:focus {
+        border: 1px solid @blue-600;
+    }
+}
+.page-products .sorter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sorter-action:before {
+    display: none;
 }
