@@ -14,9 +14,7 @@ use Magento\Framework\App\Action\Action;
 <?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())): ?>
 <?php
     $type = 'widget-product-grid';
-
     $mode = 'grid';
-
     $image = 'new_products_content_widget_grid';
     $items = $block->getProductCollection()->getItems();
 
