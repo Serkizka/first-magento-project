@@ -75,9 +75,14 @@
                 class="filter-options-item"
                 id="filter-options-item">
                 <div data-role="title" class="filter-options-title"><?= $block->escapeHtml(__($filter->getName())) ?></div>
-                <div data-role="content" class="filter-options-content">
+                <div data-role="content" class="filter-options-content" id="filter-<?= $block->escapeHtml(__($filter->getName())) ?>">
+                <?= /* @noEscape */ $block->getChildBlock('renderer')->render($filter) ?>
 
-                <?= /* @noEscape */ $block->getChildBlock('renderer')->render($filter) ?></div>
+                  <?php if ($filter->getItemsCount() > 3 && $block->escapeHtml(__($filter->getName())) !== 'Size' && $block->escapeHtml(__($filter->getName())) !== 'Color' && $block->escapeHtml(__($filter->getName())) !== 'Grootte' && $block->escapeHtml(__($filter->getName())) !== 'Kleur' ): ?>
+                      <a class="filters__button-more" id="filters-button-more" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "filters__show", "baseToggleClass": "active", "toggleContainers": "#filter-<?= $block->escapeHtml(__($filter->getName())) ?>"}}'>Meer</a>
+                  <?php endif; ?>
+
+                </div>
             </div>
             <?php endif; ?>
             <?php endforeach; ?>

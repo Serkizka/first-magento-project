@@ -1,59 +1,62 @@
 <?php
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
-// @codingStandardsIgnoreFile
-
+?>
+<?php
+/** @var \Magento\LayeredNavigation\Block\Navigation\FilterRenderer $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Magento\LayeredNavigation\ViewModel\Layer\Filter $viewModel */
+$viewModel = $block->getData('product_layer_view_model');
 ?>
 
-
-  <ul class="filters">
+<ul class="filters__list">
   <?php $item_counter = 0; ?>
-  <?php foreach ($filterItems as $filterItem): ?>
-    <?php $item_counter++; ?>
-
-
-
-    <li
-    <?php if ($item_counter > 3): ?>
-    class="filters__item filters__hidden filters__show">
-    <?php else:?>
-    class="filters__item">
-    <?php endif; ?>
-        <?php if ($filterItem->getCount() > 0): ?>
-        <form class="filters__form">
-            <label class="filters__label">
-                <input class="filters__checkbox" type="checkbox" name="#" value="yes" onclick='window.location.assign("<?php echo $escaper->escapeUrl($filterItem->getUrl()) ?>")'/>
-                <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
-                <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
-                <span class="filters__count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?>
-                    <span class="filter-count-label">
-                        <?php if ($filterItem->getCount() == 1):?>
-                        <?php /* @escapeNotVerified */ echo __('item')?>
-                    <?php else:?>
-                        <?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
-                <?php endif; ?>
-            </label>
-                    
-
-        <?php else:?>
-            <?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?>
-            <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
-            <span class="count"><?php /* @escapeNotVerified */ echo $filterItem->getCount()?>
-                <span class="filter-count-label">filters__hidden == 1):?><?php /* @escapeNotVerified */ echo __('item')?>
-                <?php else:?><?php /* @escapeNotVerified */ echo __('items') ?><?php endif;?></span></span>
-        </form>
+    <?php foreach ($filterItems as $filterItem): ?>
+      <?php $item_counter++; ?>
+        <li 
+        <?php if($item_counter > 3): ?>
+        class="filters__item filters__hidden"
+        <?php else: ?>
+        class="filters__item"
         <?php endif; ?>
-
-    </li>
-
+            <?php if ($filterItem->getCount() > 0): ?>>
+                <label class="filters__label">
+                    <input class="filters__checkbox" type="checkbox" onclick='window.location.assign("<?= $escaper->escapeUrl($filterItem->getUrl()) ?>")'>
+                    <a class="a-btn" href="<?= $escaper->escapeUrl($filterItem->getUrl()) ?>"
+                       rel="nofollow">
+                        <?= /* @noEscape */ $filterItem->getLabel() ?><?php
+                        if ($viewModel->shouldDisplayProductCountOnLayer()): ?><span
+                            class="filters__count count"><?= /* @noEscape */ (int) $filterItem->getCount() ?><span
+                                class="filter-count-label"><?php
+                            if ($filterItem->getCount() == 1): ?>
+                                <?= $escaper->escapeHtml(__('item')) ?><?php
+                            else:
+                                ?><?= $escaper->escapeHtml(__('item')) ?><?php
+                            endif;?></span></span>
+                        <?php endif; ?></a>
+                </label>
+            <?php else: ?>
+                <?= /* @noEscape */ $filterItem->getLabel() ?><?php
+                if ($viewModel->shouldDisplayProductCountOnLayer()): ?><span
+                    class="count"><?= /* @noEscape */ (int) $filterItem->getCount() ?><span
+                        class="filter-count-label"><?php
+                    if ($filterItem->getCount() == 1): ?>
+                        <?= $escaper->escapeHtml(__('items')) ?><?php
+                    else:
+                        ?><?= $escaper->escapeHtml(__('items')) ?><?php
+                    endif;?></span></span>
+                <?php endif; ?>
+            <?php endif; ?>
+        </li>
     <?php endforeach ?>
 </ul>
 
-      <?php if ($item_counter > 3): ?>
-         <a class="filters__button-more" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "filters__hidden", "baseToggleClass": "active", "toggleContainers": ".filters__show"}}'>Meer</a>
-      <?php endif; ?>
+
+
+
+
 
 

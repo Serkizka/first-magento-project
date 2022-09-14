@@ -1,40 +1,80 @@
 .filters {
-
-    &__hidden {
-      display: none;
+    &__list {
+        input.filters__checkbox[type="checkbox"] {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            border: 1px solid rgba(179, 179, 186, 0.5);
+            &:hover {
+                border: 2px solid @blue-600;
+            }
+        }
     }
 
-    &__label {
+    &__label,
+    &__count {
         display: flex;
-        justify-content: flex-start;
         align-items: center;
         cursor: pointer;
+        a {
+          display: flex;
+        }
         &:hover {
             color: @blue-600;
-        }
-        #text {
-            margin-right: 8px;
-        }
-    }
-
-    input.filters__checkbox[type="checkbox"] {
-        appearance: none;
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
-        border: 1px solid rgba(179, 179, 186, 0.5);
-        &:hover {
-            border: 2px solid @blue-600;
         }
     }
 
     &__count {
-        margin-left: 8px;
+        font-size: 10px;
     }
 
-    &__button-more {
-      position: relative;
-      padding: 5px 0 0 24px;
-      font-size: 16px;
+    // &__button-more {
+    //     position: relative;
+    //     padding: 5px 0 0 24px;
+    //     font-size: 16px;
+    // } input.filters__checkbox[type="checkbox"] {
+    //     appearance: none;
+    //     width: 24px;
+    //     height: 24px;
+    //     margin-right: 8px;
+    //     border: 1px solid rgba(179, 179, 186, 0.5);
+    //     &:hover {
+    //         border: 2px solid @blue-600;
+    //     }
+    // }
+
+}
+
+.filter-options-content a {
+    &:hover {
+        background-color: transparent;
+        color: @blue-600;
+    }
+}
+
+.filter-options-content.filters__show .filters__list {
+    .filters__hidden {
+        display: block;
+    }
+}
+
+.filters__list {
+    height: fit-content;
+    .filters__hidden {
+        display: none;
+    }
+}
+
+#filters-button-more {
+    position: relative;
+    padding: 5px 0 0 24px;
+    color: @blue-600;
+    font-size: 16px;
+    text-decoration: transparent;
+    transition: text-decoration 0.5s;
+    &:hover {
+        background-color: transparent;
+        text-decoration: underline;
     }
 }
