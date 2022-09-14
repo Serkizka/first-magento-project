@@ -9,10 +9,12 @@
 
 <ul class="wishlist__list">
   <li class="link wishlist" data-bind="scope: 'wishlist'">
-      <a <?= /* @noEscape */ $block->getLinkAttributes() ?>>
+      <a class="add wishlist" <?= /* @noEscape */ $block->getLinkAttributes() ?>>
+      
+      <img class="wishlist__image" src="<?= $block->getViewFileUrl('images/heart.svg'); ?>" alt="wihlist image" width="21" height="21" />
+
           <!-- ko if: wishlist().counter -->
-          <img class="wishlist__image" src="<?= $block->getViewFileUrl('images/heart.svg'); ?>" alt="wihlist image" width="21" height="21" />
-          <span data-bind="text: wishlist().counter" class="counter qty"></span>
+          <span class="counter qty" data-bind="text: wishlist().items.length"></span>
           <!-- /ko -->
       </a>
   </li>

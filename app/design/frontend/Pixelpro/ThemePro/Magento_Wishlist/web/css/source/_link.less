@@ -1,5 +1,5 @@
 .wishlist {
-    &__link {
+    &__list {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -17,13 +17,29 @@
     }
 }
 
-.link.wishlist .counter {
+.add.wishlist .counter.qty {
     position: absolute;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    top: -7px;
+    right: -19px;
     width: 20px;
     height: 20px;
+    color: @white;
+    background-color: @orange-700;
     border-radius: 50%;
     overflow: hidden;
+    &::after,
+    &::before {
+        content: '';
+    }
+}
+
+.add.wishlist {
+    position: relative;
+    &::after,
+    &::before {
+        content: '';
+    }
 }
