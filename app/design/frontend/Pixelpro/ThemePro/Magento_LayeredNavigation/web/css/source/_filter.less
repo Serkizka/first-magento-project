@@ -1,24 +1,48 @@
 .filters {
     &__list {
+        margin-bottom: 5px;
         input.filters__checkbox[type="checkbox"] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             appearance: none;
             width: 24px;
             height: 24px;
             margin-right: 8px;
             border: 1px solid rgba(179, 179, 186, 0.5);
+            cursor: pointer;
+            transition: border 0.5s;
             &:hover {
-                border: 2px solid @blue-600;
+                border: 1px solid @blue-600;
+            }
+            &::before {
+                content: "\e610";
+                font-family: 'luma-icons';
+                line-height: 22px;
+                font-size: 12px;
+                text-align: center;
+                color: transparent;
+                transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+            }
+            &:active,
+            &:checked,
+            &:focus {
+                background-color: @blue-600;
+                &::before {
+                  color: white;
+                }
             }
         }
     }
 
-    &__label,
-    &__count {
+    &__count,
+    &__label {
         display: flex;
         align-items: center;
         cursor: pointer;
+        transition: color 0.5s ease-in-out;
         a {
-          display: flex;
+            display: flex;
         }
         &:hover {
             color: @blue-600;
@@ -28,28 +52,11 @@
     &__count {
         font-size: 10px;
     }
-
-    // &__button-more {
-    //     position: relative;
-    //     padding: 5px 0 0 24px;
-    //     font-size: 16px;
-    // } input.filters__checkbox[type="checkbox"] {
-    //     appearance: none;
-    //     width: 24px;
-    //     height: 24px;
-    //     margin-right: 8px;
-    //     border: 1px solid rgba(179, 179, 186, 0.5);
-    //     &:hover {
-    //         border: 2px solid @blue-600;
-    //     }
-    // }
-
 }
 
 .filter-options-content a {
     &:hover {
         background-color: transparent;
-        color: @blue-600;
     }
 }
 
@@ -67,9 +74,29 @@
 }
 
 #filters-button-more {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     position: relative;
-    padding: 5px 0 0 24px;
     color: @blue-600;
     font-size: 16px;
     text-decoration: transparent;
+    &:before {
+        content: "";
+        width: 21px;
+        height: 21px;
+        margin-right: 8px;
+        background-color: @blue-600;
+        transform: rotate(90deg);
+        -webkit-mask-image: url("../images/attributes-icon/double_arrow.svg");
+        -webkit-mask-size: contain;
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+    }
+}
+
+#filters-button-more.active {
+    &:before {
+        transform: rotate(270deg);
+    }
 }

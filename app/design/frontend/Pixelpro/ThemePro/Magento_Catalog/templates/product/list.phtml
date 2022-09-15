@@ -16,10 +16,24 @@ use Magento\Framework\App\Action\Action;
  */
 ?>
 <?php
+// $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $_productCollection = $block->getLoadedProductCollection();
 /** @var \Magento\Catalog\Helper\Output $_helper */
 $_helper = $block->getData('outputHelper');
 ?>
+
+<div class="catalogue-products__box-top">
+  <div class="catalogue-products__inner-text">
+      <h2 class="catalogue-products__title">Muziek op Dvd's en Blu-rays</h2>
+      <h3 class="catalogue-products__subtitle">Welkom in de grootste muziekwinkel van de Benelux. Voor alle muziek op dvd en blu-ray ben je bij ons aan het goede adres. Samen op tour met jouw favoriete band of meezingen op een live concert van jouw idool voor de televisie, het kan allemaal! We bieden zowel de laatste albums als het eerste materiaal van je favoriete artiesten aan. Daarbij proberen we ook zo veel mogelijk muziek en live concerts van kleinere bands en singer-songwriters aan te bieden.
+        <p class="catalogue-products__text">
+        Bekijk ook:
+      <a class="catalogue-products__text-button">Top 10 Muziek op Dvd's en Blu-rays</a>
+      </p>
+      </h3>
+</div>
+</div>
+
 <?php if (!$_productCollection->count()): ?>
 <div class="message info empty">
     <div>
@@ -40,11 +54,12 @@ $_helper = $block->getData('outputHelper');
         $showDescription = true;
         $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
     }
+    
     /**
      * Position for actions regarding image size changing in vde if needed
      */
     $pos = $block->getPositioned();
-    ?>
+    ?>    
     <div class="catalogue-products__wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
         <ul class="catalogue-products__list">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
@@ -79,12 +94,15 @@ $_helper = $block->getData('outputHelper');
                                title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
                                aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
                                data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_product); ?>' role="button">
+                      <label class="catalogue-products__compare-label">
+
                           <span
                               class="catalogue-products__compare-checkbox"
                               id="catalogue-products__compare-checkbox-<?= /* @noEscape */ $_product->getId()?>">
                             </span>
-                          <span class="catalogue-products__compare-text"><?php /* @escapeNotVerified */ echo __('Vergelijk met andere artikelen') ?>
-                        </span>
+                            <span class="compare-products__compare-text"><?php /* @escapeNotVerified */ echo __('Vergelijk met andere artikelen') ?></span>
+                          
+                      </label>
     </a>
 </div>
 <!-- Add TO COMPARE -->

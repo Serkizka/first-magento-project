@@ -8,7 +8,7 @@
             max-width: 1220px;
         }
         &__item {
-          z-index: 0;
+            z-index: 0;
         }
         &__info {
             display: flex;
@@ -24,38 +24,47 @@
         &__link {
             font-weight: 600;
         }
-        &__button {
-            &-compare {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-
-                a {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
+        &__compare-label {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+            transition: color 0.5s;
+            &:hover {
+                color: @blue-600;
             }
         }
         &__compare-checkbox {
-            position: relative;
-            width: 20px;
-            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             border: 1px solid @darkColor;
             margin-right: 10px;
-        }
-        &__compare-checkbox::before {
-            content: '\e610';
-            display: block;
-            font-family: 'luma-icons';
-            font-size: 12px;
-            text-align: center;
-            color: transparent;
-        }
-
-        &__compare-checkbox:active::before {
-            background-color: @blue-600;
-            color: @white;
+            cursor: pointer;
+            transition: border 0.5s;
+            &:hover {
+                border: 1px solid @blue-600;
+            }
+            &::before {
+                display: block;
+                content: "\e610";
+                width: 24px;
+                height: 24px;
+                font-family: 'luma-icons';
+                font-size: 12px;
+                text-align: center;
+                color: transparent;
+                transition: color 0.5s ease-in-out;
+            }
+            &:active,
+            &:checked,
+            &:focus {
+                &::before {
+                    color: @white;
+                }
+                background-color: @blue-600;
+            }
         }
 
         &__description {
@@ -149,9 +158,9 @@
                 height: 604px;
             }
             &__button {
-              &-compare {
-                justify-content: left;
-              }
+                &-compare {
+                    justify-content: left;
+                }
             }
             &__box-image {
                 margin-bottom: 10px;
@@ -177,7 +186,7 @@
             }
             &__button {
                 &-compare {
-                  max-width: 170px;
+                    max-width: 170px;
                 }
             }
 
