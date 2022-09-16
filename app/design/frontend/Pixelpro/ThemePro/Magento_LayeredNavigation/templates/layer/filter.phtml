@@ -22,6 +22,8 @@ $viewModel = $block->getData('product_layer_view_model');
         <?php else: ?>
         class="filters__item"
         <?php endif; ?>
+
+
             <?php if ($filterItem->getCount() > 0): ?>>
                 <label class="filters__label">
                     <input class="filters__checkbox" type="checkbox" onclick='window.location.assign("<?= $escaper->escapeUrl($filterItem->getUrl()) ?>")'>

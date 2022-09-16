@@ -29,7 +29,7 @@
             &:focus {
                 background-color: @blue-600;
                 &::before {
-                  color: white;
+                    color: white;
                 }
             }
         }
@@ -93,10 +93,22 @@
         -webkit-mask-position: center;
         -webkit-mask-repeat: no-repeat;
     }
+    .more {
+        display: block;
+    }
+    .less {
+        display: none;
+    }
 }
 
 #filters-button-more.active {
     &:before {
         transform: rotate(270deg);
+    }
+    .more {
+        display: none;
+    }
+    .less {
+        display: block;
     }
 }

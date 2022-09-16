@@ -79,7 +79,11 @@
                 <?= /* @noEscape */ $block->getChildBlock('renderer')->render($filter) ?>
 
                   <?php if ($filter->getItemsCount() > 3 && $block->escapeHtml(__($filter->getName())) !== 'Size' && $block->escapeHtml(__($filter->getName())) !== 'Color' && $block->escapeHtml(__($filter->getName())) !== 'Grootte' && $block->escapeHtml(__($filter->getName())) !== 'Kleur' ): ?>
-                      <a class="filters__button-more" id="filters-button-more" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "filters__show", "baseToggleClass": "active", "toggleContainers": "#filter-<?= $block->escapeHtml(__($filter->getName())) ?>"}}'>Meer</a>
+
+                      <a class="filters__button-more" id="filters-button-more" data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "filters__show", "baseToggleClass": "active", "toggleContainers": "#filter-<?= $block->escapeHtml(__($filter->getName())) ?>"}}'>
+                    <p class="filters__button-more more">Meer</p>
+                    <p class="filters__button-more less">Minder</p>
+                    </a>
                   <?php endif; ?>
 
                 </div>

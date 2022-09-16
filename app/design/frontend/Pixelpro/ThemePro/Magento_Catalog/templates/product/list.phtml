@@ -23,19 +23,79 @@ $_helper = $block->getData('outputHelper');
 ?>
 
 <div class="catalogue-products__box-top">
-  <div class="catalogue-products__inner-text">
-      <h2 class="catalogue-products__title">Muziek op Dvd's en Blu-rays</h2>
 
-    <div class="catalogue-products__subtitle-less">
-        <h3 class="catalogue-products__subtitle-text">Welkom in de grootste muziekwinkel van de Benelux. Voor alle muziek op dvd en blu-ray ben je bij ons aan het goede adres. Samen op tour met jouw favoriete band of meezingen op een live concert van jouw idool voor de televisie, het kan allemaal! We bieden zowel de laatste albums als het eerste materiaal van je favoriete artiesten aan. Daarbij proberen we ook zo veel mogelijk muziek en live concerts van kleinere bands en singer-songwriters aan te bieden.
-</h3>
-      <p class="catalogue-products__text">
+    <h2 class="catalogue-products__title">Fitness & Training</h2>
+
+<div class="catalogue-products__content-box">
+
+      <div class="catalogue-products__content-less">
+
+        <p class="catalogue-products__content-text">
+          Ontdek het aanbod aan Fitness & Training op bol.com. Het is goed om regelmatig te sporten en het is natuurlijk fijn als je daar de juiste spullen voor hebt. Van trendy fitnesskleding, fitnessmaterialen en fitnessvoeding tot fitnessapparaten en fitnessmaterialen. Je vind het allemaal in ons assortiment. Zo zit er voor elke sporter wel iets bij! Of je nu graag thuis, op het veld of elders op locatie sport. Met de Fitness & Training producten kan je op elk moment van de dag lekker sporten!
+        </p>
+
+
+      <ul class="catalogue-products__buttons-list">
         Bekijk ook:
-      <button class="catalogue-products__text-button">Top 10 Muziek op Dvd's en Blu-rays</button>
-      </p>
-    </div>    
+        <li class="catalogue-products__button-item">Top 10 Fitness & Training</li>
+        <li class="catalogue-products__button-item">Fitnesskleding</li>
+        <li class="catalogue-products__button-item">Fitnessmaterialen</li>
+        <li class="catalogue-products__button-item">Fitnessapparaten</li>
+        <li class="catalogue-products__button-item">Fitnessvoeding</li>
+        <li class="catalogue-products__button-item">De Beginnende Sporter</li>
+      </ul>
+
 </div>
-<a class="catalogue-products__text-link" href="#" data-mage-init='{"toggleAdvanced": { "selectorsToggleClass": "catalogue-products__subtitle-more", "baseToggleClass": "active", "toggleContainers": ".catalogue-products__subtitle-less" }}'>Meer</a>
+
+  <div class="catalogue-products__button-content" href="#" data-mage-init='{"toggleAdvanced": { "selectorsToggleClass": "catalogue-products__content-more", "baseToggleClass": "active", "toggleContainers": ".catalogue-products__content-less" }}'>
+    <p class="filters__button-more more">Meer</p>
+    <p class="filters__button-more less">Minder</p>
+  </div>
+
+</div>
+
+<div class="catalogue-products__images-box">
+  <div class="container">
+  <ul class="catalogue-products__images-list">
+
+    <li class="catalogue-products__images-item">
+      <a class="catalogue-products__images-link" href="#">
+        <div class="catalogue-products__image-back catalogue-products__image-back--1">
+
+        <div class="catalogue-products__image-text catalogue-products__image-text--1">
+          <h2 class="catalogue-products__image-title catalogue-products__image-title--1">Sportief aan de slag</h2>
+          <h3 class="catalogue-products__image-subtitle catalogue-products__image-subtitle--1">sportkleding- en schoenen</h3>
+          <button class="button">
+            <span class="catalogue-products__image-subtitle-arrow">></span>
+          </button>
+        </div>
+
+          <div class="catalogue-products__image catalogue-products__image--1" style="background-image: url('<?php echo $this->getViewFileUrl("images/list-description-images/1.jpg") ?>');"></div>
+        </div>
+      </a>
+    </li>
+
+    <li class="catalogue-products__images-item">
+      <a class="catalogue-products__images-link" href="#">
+        <div class="catalogue-products__image-back catalogue-products__image-back--2">
+
+        <div class="catalogue-products__image-text catalogue-products__image-text--2">
+          <h2 class="catalogue-products__image-title catalogue-products__image-title--2">Sportief aan de slag</h2>
+          <h3 class="catalogue-products__image-subtitle catalogue-products__image-subtitle--2">sportkleding- en schoenen</h3>
+
+        </div>
+
+          <button class="button catalogue-products__button--2">
+            <span class="catalogue-products__image-subtitle-arrow">></span>
+          </button>
+
+          <a class="catalogue-products__image catalogue-products__image--2" style="background-image: url('<?php echo $this->getViewFileUrl("images/list-description-images/2.jpg") ?>');"></a>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
 </div>
 
 <?php if (!$_productCollection->count()): ?>

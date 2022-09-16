@@ -7,18 +7,139 @@
             padding: 0 15px;
             max-width: 1220px;
         }
-        &__subtitle {
-          &-less {
-            height: 20px;
-            overflow: hidden;
-          }
-          &-text {
-            margin-bottom: 20px;
-          }
-          &-more {
-            height: fit-content;
-          }
+
+        &__title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
         }
+
+        &__content {
+            &-box {
+                position: relative;
+                display: flex;
+            }
+            &-less {
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                margin-bottom: 20px;
+            }
+            &-more {
+                display: flex;
+                flex-direction: column;
+                height: fit-content;
+                margin-bottom: 45px;
+            }
+            &-text {
+                letter-spacing: 0.2px;
+            }
+        }
+
+        &__buttons-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__button-item {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 4px 19px;
+            font-size: 13px;
+            border: 1px solid @gray-100;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+
+        &__images-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__images-item {
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+
+        &__image {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            &--1 {
+                width: 303px;
+                height: 218px;
+            }
+            &--2 {
+                width: 295px;
+                height: 148px;
+            }
+            &-back {
+                display: flex;
+                align-items: center;
+                height: 218px;
+                &--1 {
+                    justify-content: flex-end;
+                    width: 606px;
+                    background-color: @pink-200;
+                }
+                &--2 {
+                    position: relative;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    padding: 30px 0 0 30px;
+                    background-color: @lightBlue;
+                }
+            }
+            &-text {
+                color: @blue-900;
+                &--1 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: 50%;
+                    padding: 30px;
+                }
+                &--2 {}
+            }
+
+            &-title {
+                margin-bottom: 4px;
+                font-weight: 900;
+                line-height: 1;
+                &--1 {
+                    font-size: 36px;
+                }
+                &--2 {
+                    font-size: 18px;
+                }
+            }
+            &-subtitle {
+                margin-bottom: 8px;
+                font-weight: 300;
+                line-height: 1;
+                &--1 {
+                    font-size: 28px;
+                }
+                &--2 {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__button {
+            &--2 {
+                position: absolute;
+                bottom: 30px;
+                left: 30px;
+            }
+        }
+
         &__item {
             z-index: 0;
         }
@@ -241,4 +362,28 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.catalogue-products__button-content.active {
+    position: absolute;
+    display: block;
+    left: 0;
+    align-self: flex-end;
+
+    .more {
+        display: none;
+    }
+    .less {
+        display: block;
+    }
+}
+
+.catalogue-products__button-content {
+    .more {
+        display: block;
+    }
+    .less {
+        display: none;
+    }
+
 }
