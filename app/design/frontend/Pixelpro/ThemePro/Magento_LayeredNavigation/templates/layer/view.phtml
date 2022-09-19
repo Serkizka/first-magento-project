@@ -95,18 +95,7 @@
         </div>
     <?php else : ?>
         <script>
-            require(['jquery'], function ($) {
-                $('#layered-filter-block').addClass('filter-no-options');
-                $('#narrow-by-list').on("dimensionsChanged", function (event, data) {
-                    var opened = data.opened;
 
-                    if (opened) {
-                        let filtersItem = document.getElementsByClassName('filters__item');
-                        let itemCount = filtersItem.length;
-                        return;
-                    }
-                });
-            });
         </script>
         <?php endif; ?>
     </div>
