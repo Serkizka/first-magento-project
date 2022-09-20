@@ -12,6 +12,8 @@ var config = {
             productListToolbarForm: "Magento_Catalog/js/product/list/toolbar",
             catalogGallery: "Magento_Catalog/js/gallery",
             catalogAddToCart: "Magento_Catalog/js/catalog-add-to-cart",
+            catalogueProductsListSlider:
+                "Magento_Catalog/js/catalogue-products-slider",
         },
     },
     config: {

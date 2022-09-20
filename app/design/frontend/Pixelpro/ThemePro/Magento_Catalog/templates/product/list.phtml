@@ -16,7 +16,7 @@ use Magento\Framework\App\Action\Action;
  */
 ?>
 <?php
-// $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $_productCollection = $block->getLoadedProductCollection();
 /** @var \Magento\Catalog\Helper\Output $_helper */
 $_helper = $block->getData('outputHelper');
@@ -94,6 +94,97 @@ $_helper = $block->getData('outputHelper');
       </a>
     </li>
   </ul>
+
+  <ul class="catalogue-products__list-slider" id="catalogue-products-list-slider">
+    <li class="catalogue-products__item-slider">
+      <a class="catalogue-products__link-slider" href="#">
+          <img
+      class="catalogue-products__slider-image"
+      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/1.jpg'); ?>" alt="slider image">
+        <p class="catalogue-products__text-slider">
+          Stadsfietsen
+        </p>
+      </a>
+</li>
+
+    <li class="catalogue-products__item-slider">
+      <a class="catalogue-products__link-slider" href="#">
+        <img
+      class="catalogue-products__slider-image"
+      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/2.jpg'); ?>" alt="slider image">
+        <p class="catalogue-products__text-slider">
+          Elektrische fietsen
+        </p>
+      </a>
+</li>
+
+    <li class="catalogue-products__item-slider">
+      <a class="catalogue-products__link-slider" href="#">
+        <img
+      class="catalogue-products__slider-image"
+      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/3.jpg'); ?>" alt="slider image">
+        <p class="catalogue-products__text-slider">
+          Kinderfietsen
+        </p>
+      </a>
+</li>
+
+    <li class="catalogue-products__item-slider">
+      <a class="catalogue-products__link-slider" href="#">
+        <img
+      class="catalogue-products__slider-image"
+      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/4.jpg'); ?>" alt="slider image">
+        <p class="catalogue-products__text-slider">
+          Mountainbikes
+        </p>
+      </a>
+</li>
+
+    <li class="catalogue-products__item-slider">
+      <a class="catalogue-products__link-slider" href="#">
+        <img
+      class="catalogue-products__slider-image"
+      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/5.jpg'); ?>" alt="slider image">
+        <p class="catalogue-products__text-slider">
+          Hybridefietsen
+        </p>
+      </a>
+</li>
+
+    <li class="catalogue-products__item-slider">
+      <a class="catalogue-products__link-slider" href="#">
+        <img
+      class="catalogue-products__slider-image"
+      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/6.jpg'); ?>" alt="slider image">
+        <p class="catalogue-products__text-slider">
+          Racefietsen
+        </p>
+      </a>
+</li>
+
+    <li class="catalogue-products__item-slider">
+      <a class="catalogue-products__link-slider" href="#">
+        <img
+      class="catalogue-products__slider-image"
+      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/7.jpg'); ?>" alt="slider image">
+        <p class="catalogue-products__text-slider">
+          Vouwfietsen
+        </p>
+      </a>
+</li>
+
+    <li class="catalogue-products__item-slider">
+      <a class="catalogue-products__link-slider" href="#">
+        <img
+      class="catalogue-products__slider-image"
+      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/8.jpg'); ?>" alt="slider image">
+        <p class="catalogue-products__text-slider">
+          Moederfietsen
+        </p>
+      </a>
+</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -210,6 +301,46 @@ $_helper = $block->getData('outputHelper');
     <!-- Products characteristics -->
     <?= $block->getProductDetailsHtml($_product) ?>
     <!-- Products characteristics -->
+
+    <!-- related products -->
+<?php if($product_counter % 4 == 0 && $block->getMode() === 'list'): ?>
+
+<?php
+$currentProductId = $_product->getId();
+$relatedProducts = $_product->getRelatedProducts();
+?>
+
+  <p class="catalogue-products__related-title">
+      In verschillende varianten verkrijgbaar:
+  </p>
+
+<ul class="catalogue-products__related-list">
+  <?php foreach ($relatedProducts as $relatedProduct): ?>
+    <?php
+    $_product = $objectManager->create('Magento\Catalog\Model\Product')->load($relatedProduct->getId());
+    $relatedProductName = $_product->getName();
+  ?>
+    <li class="catalogue-products__related-item">
+      <a class="catalogue-products__related-link" href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>" >
+      <div class="catalogue-products__related-image">
+        <?php
+        $relatedProductImg = $block->getImage($_product, $imageDisplayArea);
+        ?>
+        <?= $relatedProductImg->toHtml() ?>
+    </div>
+    <div class="catalogue-products__related-information">
+      <p class="catalogue-products__related-subtitle"><?= $relatedProductName ?></p>
+      <?= $block->getProductPrice($_product) ?>
+    </div>
+    </a>  
+  
+</li>
+  <?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
+  <!-- related products -->
+
 </div>
 
 <div class="product-item-inner">
@@ -236,8 +367,8 @@ $_helper = $block->getData('outputHelper');
                 <span class="catalogue-products__some-text">SUPER PRODUCT</span>
 
                 <?php
-                                                    $product_counter++
-                                                    ?>
+                $product_counter++
+                ?>
                 <?php endif; ?>
                 <!-- some text -->
                 <div class="catalogue-products__btn">
@@ -337,6 +468,14 @@ $_helper = $block->getData('outputHelper');
 "product_sku": "<?= $escaper->escapeJs($_product->getSku()) ?>"
 }
 }
+}
+</script>
+
+<script type="text/x-magento-init">
+  {
+    "#catalogue-products-list-slider": {
+      "catalogueProductsListSlider": {}
+  }
 }
 </script>
 <?php endif; ?>
