@@ -455,9 +455,15 @@ $relatedProducts = $_product->getRelatedProducts();
                     'product-item-info_' . $_product->getId() . ' div.product-item-actions'
                 ) : '' ?>
 </li>
+
 <?php $product_counter++; ?>
 <?php endforeach; ?>
 </ul>
+
+    <div class="toolbar__bottom">
+        <?php echo $this->getToolbarHtml() ?>
+    </div>
+    
 </div>
 
 <?php // phpcs:ignore Magento2.Legacy.PhtmlTemplate ?>

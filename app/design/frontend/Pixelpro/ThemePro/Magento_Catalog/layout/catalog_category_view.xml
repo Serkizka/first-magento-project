@@ -47,6 +47,8 @@
                 </arguments>
             </block>
         </referenceContainer>
+
+
         <referenceBlock name="page.main.title">
             <arguments>
                 <argument name="id" xsi:type="string">page-title-heading</argument>

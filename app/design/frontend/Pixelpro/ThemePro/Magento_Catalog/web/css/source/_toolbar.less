@@ -1,17 +1,85 @@
 .toolbar {
-  &__inner {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    &__inner {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
 
-    p {
-      width: 10%;
+        p {
+            width: 10%;
+        }
     }
-  }
-  &__list {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 90%;
-  }
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 90%;
+    }
+    .pages {
+        display: none;
+    }
+
+    &__bottom {
+        .pages {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            a.page {
+                font-size: 14px;
+                color: @blue-600;
+                text-decoration: transparent;
+                transition: text-decoration 0.5s;
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .action.next {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 46px;
+                height: 46px;
+                text-align: center;
+                font-size: 14px;
+                line-height: calc(3rem - 2px);
+                border: 1px solid @blue-600;
+                border-radius: 0;
+                background-color: transparent;
+                box-shadow: 0 4px 0 -2px rgba(3, 3, 26, 0.25);
+                cursor: pointer;
+                transition: color 0.5s, background-color 0.5s, border-color 0.5s,
+                    border 0.5s;
+
+                &::before {
+                    color: @blue-600;
+                }
+                &:active {
+                    background-color: @blue-900;
+                    border-color: @blue-900;
+                    &:before {
+                        color: @white;
+                    }
+                }
+                &:focus,
+                &:hover {
+                    border: 2px solid @blue-900;
+                }
+            }
+        }
+        .pages strong.page {
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 600;
+            background-color: transparent;
+        }
+        .toolbar-amount__box,
+        .toolbar-sorter__box,
+        .modes__inner {
+            display: none !important;
+        }
+    }
 }
