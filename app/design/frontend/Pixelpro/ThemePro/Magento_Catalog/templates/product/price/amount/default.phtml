@@ -38,6 +38,7 @@
     <?php if ($block->hasAdjustmentsHtml()) : ?>
         <?= $block->getAdjustmentsHtml() ?>
     <?php endif; ?>
+
     <?php if ($block->getSchema()) : ?>
         <meta itemprop="price" content="<?= $block->escapeHtmlAttr($block->getDisplayValue()) ?>"/>
         <meta itemprop="priceCurrency" content="<?= $block->escapeHtmlAttr($block->getDisplayCurrencyCode()) ?>"/>
