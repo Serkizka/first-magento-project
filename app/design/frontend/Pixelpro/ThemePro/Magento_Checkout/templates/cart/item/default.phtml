@@ -16,6 +16,7 @@ $isVisibleProduct = $product->isVisibleInSiteVisibility();
 $helper = $this->helper(Magento\Msrp\Helper\Data::class);
 $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinimalPriceLessMsrp($product);
 ?>
+
 <tbody class="cart__item cart item">
     <tr class="cart__info item-info">
         <td class="cart__item-box col item" data-th="<?= $block->escapeHtml(__('Item')) ?>">
@@ -34,6 +35,9 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                 </span>
             <?php endif; ?>
             <div class="cart__details product-item-details">
+              <div class="cart__item-info">
+
+              <!-- cart name -->
                 <strong class="cart__item-name product-item-name">
                     <?php if ($block->hasProductUrl()): ?>
                         <a class="cart__name-link" href="<?= $block->escapeUrl($block->getProductUrl()) ?>"><?= $block->escapeHtml($block->getProductName()) ?></a>
@@ -41,7 +45,10 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                         <?= $block->escapeHtml($block->getProductName()) ?>
                     <?php endif; ?>
                 </strong>
-                <?php if ($_options = $block->getOptionList()): ?>
+                <!-- cart name -->
+
+                <!-- cart parameters -->
+                  <?php if ($_options = $block->getOptionList()): ?>
                     <dl class="cart__item-option item-options">
                         <?php foreach ($_options as $_option): ?>
                             <?php $_formatedOptionValue = $block->getFormatedOptionValue($_option) ?>
@@ -55,8 +62,10 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                             </dd>
                         <?php endforeach; ?>
                     </dl>
+                    <?php endif; ?>
+                    <!-- cart parameters -->
 
-                                                                                <!-- Review -->
+                <!-- Review -->
 
               <div class="product-reviews-summary" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
                 <div class="rating-summary">
@@ -85,6 +94,7 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
         </div>
           </div>
         <!-- End Review -->
+          </div>
 
 
             <div class="fresh-proposal">
@@ -94,7 +104,8 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
             </div>
 
 
-        <?php endif; ?>
+
+        
 
                 <?php if ($messages = $block->getMessages()): ?>
                     <?php foreach ($messages as $message): ?>
@@ -173,3 +184,4 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
         </td>
     </tr>
 </tbody>
+
