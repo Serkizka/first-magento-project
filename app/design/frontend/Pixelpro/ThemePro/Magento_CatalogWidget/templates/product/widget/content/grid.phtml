@@ -12,7 +12,7 @@ use Magento\Framework\App\Action\Action;
 // phpcs:disable Magento2.Templates.ThisInTemplate.FoundHelper
 ?>
 <?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())): ?>
-<?php
+    <?php
     $type = 'widget-product-grid';
     $mode = 'grid';
     $image = 'new_products_content_widget_grid';
@@ -24,68 +24,80 @@ use Magento\Framework\App\Action\Action;
     $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
     $description = false;
     ?>
-<div class="popular-products__title <?= /* @noEscape */ $mode ?>">
-    <?php if ($block->getTitle()): ?>
-    <div class="block-title">
-        <strong><?= $block->escapeHtml(__($block->getTitle())) ?></strong>
-    </div>
-    <?php endif ?>
-    <div class="popular-products">
-        <?= /* @noEscape */ '<!-- ' . $image . '-->' ?>
-        <div
-            class="popular-products__box<?= /* @noEscape */ $mode ?> <?= /* @noEscape */ $mode ?>">
-            <div class="popular-products__wrapper">
-            <h2 class="popular-products__title">
-              Nu trending
-            </h2>
-            <a class="popular-products__txt a-btn" href="#">
-              Bekijk al je persoonlijke aanbevelingen
-            </a></div>
-            <ul class="popular-products__list <?= /* @noEscape */ $type ?>">
-                <?php $iterator = 1; ?>
-                <?php foreach ($items as $_item): ?>
-                <?= /* @noEscape */ ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
-                <div class="popular-products__image">
-                    <a
-                        href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
-                        class="product-item-photo">
-                        <?= $block->getImage($_item, $image)->toHtml() ?>
-                    </a>
-                    <div class="popular-products__details">
-                        <strong class="popular-products__subtitle a-btn">
+    <div class="popular-products__title <?= /* @noEscape */
+    $mode ?>">
+        <?php if ($block->getTitle()): ?>
+            <div class="block-title">
+                <strong><?= $block->escapeHtml(__($block->getTitle())) ?></strong>
+            </div>
+        <?php endif ?>
+        <div class="popular-products">
+            <?= /* @noEscape */
+            '<!-- ' . $image . '-->' ?>
+            <div
+                class="popular-products__box<?= /* @noEscape */
+                $mode ?> <?= /* @noEscape */
+                $mode ?>">
+                <div class="popular-products__wrapper">
+                    <h2 class="popular-products__title">
+                        Nu trending
+                    </h2>
+                    <a class="popular-products__txt a-btn" href="#">
+                        Bekijk al je persoonlijke aanbevelingen
+                    </a></div>
+                <ul class="popular-products__list <?= /* @noEscape */
+                $type ?>">
+                    <?php $iterator = 1; ?>
+                    <?php foreach ($items as $_item): ?>
+                        <?= /* @noEscape */
+                        ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
+                        <div class="popular-products__image">
                             <a
-                                title="<?= $block->escapeHtml($_item->getName()) ?>"
                                 href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
-                                class="popular-products__link">
-                                <?= $block->escapeHtml($_item->getName()) ?>
+                                class="product-item-photo">
+                                <?= $block->getImage($_item, $image)->toHtml() ?>
                             </a>
-                        </strong>
+                            <div class="popular-products__details">
+                                <strong class="popular-products__subtitle a-btn">
+                                    <a
+                                        title="<?= $block->escapeHtml($_item->getName()) ?>"
+                                        href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
+                                        class="popular-products__link">
+                                        <?= $block->escapeHtml($_item->getName()) ?>
+                                    </a>
+                                </strong>
 
-                        <?= $block->getProductPriceHtml($_item, $type) ?>
+                                <?= $block->getProductPriceHtml($_item, $type) ?>
 
-                        <?php if ($showWishlist || $showCompare || $showCart): ?>
-                        <div class="popular-products__inner">
-                            <div class="popular-products__actions">
-                                <?php if ($showCart): ?>
+                                <?php if ($showWishlist || $showCompare || $showCart): ?>
+                                    <div class="popular-products__inner">
+                                        <div class="popular-products__actions">
+                                            <?php if ($showCart): ?>
 
-                                <?php endif; ?>
-                                <?php if ($showWishlist): ?>
-                                <div class="popular-products__actions-secondary" data-role="add-to-links">
-                                    <?php if ($this->helper(\Magento\Wishlist\Helper\Data::class)->isAllow() && $showWishlist): ?>
-                                    <ul class="popular-products__wishlist-list">
-                                        <li class="popular-products__wishlist-item" data-bind="scope: 'wishlist'">
-                                            <a class="popular-products__wishlist-link" href="#" data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_item) ?>' data-action="add-to-wishlist" title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
-                                                <svg
-                                                    class="popular-products__wishlist-image"
-                                                    version="1.1"
-                                                    id="Capa_1"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                    x="0px"
-                                                    y="0px"
-                                                    viewbox="0 0 490 490"
-                                                    style="enable-background:new 0 0 490 490;"
-                                                    xml:space="preserve">
+                                            <?php endif; ?>
+                                            <?php if ($showWishlist): ?>
+                                                <div class="popular-products__actions-secondary"
+                                                     data-role="add-to-links">
+                                                    <?php if ($this->helper(\Magento\Wishlist\Helper\Data::class)->isAllow() && $showWishlist): ?>
+                                                        <ul class="popular-products__wishlist-list">
+                                                            <li class="popular-products__wishlist-item"
+                                                                data-bind="scope: 'wishlist'">
+                                                                <a class="popular-products__wishlist-link" href="#"
+                                                                   data-post='<?= /* @noEscape */
+                                                                   $block->getAddToWishlistParams($_item) ?>'
+                                                                   data-action="add-to-wishlist"
+                                                                   title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
+                                                                    <svg
+                                                                        class="popular-products__wishlist-image"
+                                                                        version="1.1"
+                                                                        id="Capa_1"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        x="0px"
+                                                                        y="0px"
+                                                                        viewbox="0 0 490 490"
+                                                                        style="enable-background:new 0 0 490 490;"
+                                                                        xml:space="preserve">
                                                     <path
                                                         id="XMLID_25_"
                                                         d="M316.554,108.336c4.553,6.922,2.629,16.223-4.296,20.774c-3.44,2.261-6.677,4.928-9.621,7.929
@@ -103,48 +115,49 @@ use Magento\Framework\App\Action\Action;
 	c23.211,23.658,23.211,62.153,0,85.811l-52.648,53.661c-5.803,5.915-5.711,15.412,0.206,21.212
 	c2.921,2.863,6.714,4.291,10.506,4.291c3.889,0,7.776-1.502,10.714-4.497l52.648-53.661
 	C438.744,208.616,438.744,151.275,404.169,116.034z"/>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
-                                                    <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
+                                                                        <g></g>
                                                 </svg>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <?php endif; ?>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    <?php endif; ?>
 
-                                </div>
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <?= ($iterator == count($items) + 1) ? '</li>' : '' ?>
-                <?php endforeach ?>
-        </ul>
+                        <?= ($iterator == count($items) + 1) ? '</li>' : '' ?>
+                    <?php endforeach ?>
+                </ul>
+            </div>
+            <?= $block->getPagerHtml() ?>
+        </div>
     </div>
-    <?= $block->getPagerHtml() ?>
-</div>
-</div>
-<?php if($block->getBlockHtml('formkey')): ?>
-<script type="text/x-magento-init">
+    <?php if ($block->getBlockHtml('formkey')): ?>
+        <script type="text/x-magento-init">
 {
     ".block.widget [data-role=tocart-form]": {
         "Magento_Catalog/js/validate-product": {}
     }
 }
-</script>
-<?php endif;?>
-<?php endif;?>
+
+        </script>
+    <?php endif; ?>
+<?php endif; ?>

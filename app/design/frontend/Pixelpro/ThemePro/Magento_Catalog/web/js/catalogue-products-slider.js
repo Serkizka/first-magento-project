@@ -1,5 +1,6 @@
 define(["jquery", "slick"], function ($, slick) {
     "use strict";
+
     $(document).ready(function () {
         $("#catalogue-products-list-slider").slick({
             slidesToScroll: 1,

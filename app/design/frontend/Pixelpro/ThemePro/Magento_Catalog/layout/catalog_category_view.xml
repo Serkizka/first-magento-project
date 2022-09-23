@@ -19,8 +19,6 @@
                 <block class="Magento\Catalog\Block\Category\View" name="category.cms" template="Magento_Catalog::category/cms.phtml"/>
             </container>
         </referenceContainer>
-
-
         <referenceContainer name="content">
             <block class="Magento\Catalog\Block\Category\View" name="category.products" template="Magento_Catalog::category/products.phtml">
                 <block class="Magento\Catalog\Block\Product\ListProduct" name="category.products.list" as="product_list" template="Magento_Catalog::product/list.phtml">
@@ -47,8 +45,6 @@
                 </arguments>
             </block>
         </referenceContainer>
-
-
         <referenceBlock name="page.main.title">
             <arguments>
                 <argument name="id" xsi:type="string">page-title-heading</argument>
@@ -57,8 +53,6 @@
             <block class="Magento\Catalog\Block\Category\Rss\Link" name="rss.link" template="Magento_Catalog::category/rss.phtml"/>
         </referenceBlock>
         <referenceBlock name="category.products.list">
-
-                 
             <arguments>
                 <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\OptionsData</argument>
             </arguments>

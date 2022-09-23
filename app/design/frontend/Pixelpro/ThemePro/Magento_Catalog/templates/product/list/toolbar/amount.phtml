@@ -12,20 +12,17 @@
  */
 ?>
 <p class="toolbar-amount__box toolbar-amount" id="toolbar-amount">
-    <?php if ($block->getLastPageNum() > 1) :?>
+    <?php if ($block->getLastPageNum() > 1) : ?>
         <?= $block->escapeHtml(
-            __(
-                '%1 resultaten',
-                '<span class="toolbar-number">' . $block->getTotalNum() . '</span>'
-            ),
+            __('%1 resultaten', '<span class="toolbar-number">' . $block->getTotalNum() . '</span>'),
             ['span']
         ) ?>
-    <?php elseif ($block->getTotalNum() == 1) :?>
+    <?php elseif ($block->getTotalNum() == 1) : ?>
         <?= $block->escapeHtml(
             __('%1 Item', '<span class="toolbar-number">' . $block->getTotalNum() . '</span>'),
             ['span']
         ) ?>
-    <?php else :?>
+    <?php else : ?>
         <?= $block->escapeHtml(
             __('%1 Items', '<span class="toolbar-number">' . $block->getTotalNum() . '</span>'),
             ['span']

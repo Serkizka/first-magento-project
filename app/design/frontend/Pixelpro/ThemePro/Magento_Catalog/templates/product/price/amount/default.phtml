@@ -23,12 +23,12 @@
     ?>
     <span class="price-dollars">
       <?php
-      echo $dollars. ","
+      echo $dollars . ","
       ?>
         <?php if (strpos($dollars, $signDollar) == true) {
             echo str_replace("$", "", $dollars);
         } ?>
-        <?php if(strpos($cents, $zeroCent) == false):?>
+        <?php if (strpos($cents, $zeroCent) == false): ?>
             <sup class="price-cnt">-</sup>
         <?php else: ?>
             <sup class="price-cnt"><?php echo $cents ?></sup>

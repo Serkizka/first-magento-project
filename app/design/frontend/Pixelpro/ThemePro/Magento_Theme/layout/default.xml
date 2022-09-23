@@ -2,11 +2,6 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-
-        <!--header-top-->
-
-        <referenceBlock name="header.panel.wrapper" remove="true"/>
-
         <referenceContainer name="page.wrapper">
             <block
                 class="Magento\Framework\View\Element\Template"
@@ -15,50 +10,31 @@
                 before="header.container"/>
         </referenceContainer>
 
-        <!--header-top-end-->
-
-        <!--header-->
-        <move element="logo" destination="header-wrapper" before="-"/>
-        <move element="authorization-link" destination="header-wrapper"/>
-        <move element="wish-list-link" destination="header-wrapper" before="minicart"/>
-        <move element="minicart" destination="header-wrapper" after="-"/>
-        <!--header-end-->
-
-        <!-- nav panel switch languages -->
-
-        <move element="store.settings.language" destination="catalog.topnav" after="-"/>
-
-        <!-- nav panel switch languages -->
-
-        <!-- under nav panel line -->
         <referenceContainer name="page.top">
             <block
                 class="Magento\Framework\View\Element\Template"
                 name="under.navigation"
                 template="Magento_Theme::under-navigation.phtml"/>
         </referenceContainer>
-        <!-- under nav panel line -->
-
-        <move element="breadcrumbs" destination="main.content" before="-"/>
-
-        <!-- footer -->
-
-        <referenceBlock name="form.subscribe" remove="true"/>
-        <referenceBlock name="footer_links" remove="true"/>
-        
-        <referenceContainer
-            name="footer"
-            label="Page Footer"
-            htmlTag="div"
-            htmlClass="footer content">
-
-            <block class="Magento\Framework\View\Element\Template" name="footer-top" template="Magento_Theme::html/footer-top.phtml"/>
-            <block class="Magento\Framework\View\Element\Template" name="footer-middlle" template="Magento_Theme::html/footer-middle.phtml"/>
-            <block class="Magento\Framework\View\Element\Template" name="footer-bottom" template="Magento_Theme::html/footer-bottom.phtml"/>
-            
+        <referenceContainer name="footer" label="Page Footer" htmlTag="div" htmlClass="footer content">
+            <block class="Magento\Framework\View\Element\Template" name="footer-top"
+                   template="Magento_Theme::html/footer-top.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="footer-middlle"
+                   template="Magento_Theme::html/footer-middle.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="footer-bottom"
+                   template="Magento_Theme::html/footer-bottom.phtml"/>
             <referenceBlock name="copyright" remove="true"/>
         </referenceContainer>
-        <!-- footer -->
 
+        <move element="logo" destination="header-wrapper" before="-"/>
+        <move element="authorization-link" destination="header-wrapper"/>
+        <move element="wish-list-link" destination="header-wrapper" before="minicart"/>
+        <move element="minicart" destination="header-wrapper" after="-"/>
+        <move element="store.settings.language" destination="catalog.topnav" after="-"/>
+        <move element="breadcrumbs" destination="main.content" before="-"/>
+
+        <referenceBlock name="form.subscribe" remove="true"/>
+        <referenceBlock name="header.panel.wrapper" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
     </body>
 </page>

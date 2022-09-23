@@ -3,6 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 use Magento\Framework\App\Action\Action;
 
 ?>
@@ -22,177 +23,170 @@ $_productCollection = $block->getLoadedProductCollection();
 $_helper = $block->getData('outputHelper');
 ?>
 
-<div class="catalogue-products__box-top">
-
-    <h2 class="catalogue-products__title">Fitness & Training</h2>
-
-<div class="catalogue-products__content-box">
-
-      <div class="catalogue-products__content-less">
-
-        <p class="catalogue-products__content-text">
-          Ontdek het aanbod aan Fitness & Training op bol.com. Het is goed om regelmatig te sporten en het is natuurlijk fijn als je daar de juiste spullen voor hebt. Van trendy fitnesskleding, fitnessmaterialen en fitnessvoeding tot fitnessapparaten en fitnessmaterialen. Je vind het allemaal in ons assortiment. Zo zit er voor elke sporter wel iets bij! Of je nu graag thuis, op het veld of elders op locatie sport. Met de Fitness & Training producten kan je op elk moment van de dag lekker sporten!
-        </p>
-
-
-      <ul class="catalogue-products__buttons-list">
-        Bekijk ook:
-        <li class="catalogue-products__button-item">Top 10 Fitness & Training</li>
-        <li class="catalogue-products__button-item">Fitnesskleding</li>
-        <li class="catalogue-products__button-item">Fitnessmaterialen</li>
-        <li class="catalogue-products__button-item">Fitnessapparaten</li>
-        <li class="catalogue-products__button-item">Fitnessvoeding</li>
-        <li class="catalogue-products__button-item">De Beginnende Sporter</li>
-      </ul>
-
-</div>
-
-  <div class="catalogue-products__button-content" href="#" data-mage-init='{"toggleAdvanced": { "selectorsToggleClass": "catalogue-products__content-more", "baseToggleClass": "active", "toggleContainers": ".catalogue-products__content-less" }}'>
-    <p class="filters__button-more more">Meer</p>
-    <p class="filters__button-more less">Minder</p>
-  </div>
-
-</div>
-
-<div class="catalogue-products__images-box">
-  <div class="container">
-  <ul class="catalogue-products__images-list">
-
-    <li class="catalogue-products__images-item">
-      <a class="catalogue-products__images-link" href="#">
-        <div class="catalogue-products__image-back catalogue-products__image-back--1">
-
-        <div class="catalogue-products__image-text catalogue-products__image-text--1">
-          <h2 class="catalogue-products__image-title catalogue-products__image-title--1">Sportief aan de slag</h2>
-          <h3 class="catalogue-products__image-subtitle catalogue-products__image-subtitle--1">sportkleding- en schoenen</h3>
-          <button class="button">
-            <span class="catalogue-products__image-subtitle-arrow">></span>
-          </button>
+    <div class="catalogue-products__box-top">
+        <h2 class="catalogue-products__title">Fitness & Training</h2>
+        <div class="catalogue-products__content-box">
+            <div class="catalogue-products__content-less">
+                <p class="catalogue-products__content-text">
+                    Ontdek het aanbod aan Fitness & Training op bol.com. Het is goed om regelmatig te sporten en het is
+                    natuurlijk fijn als je daar de juiste spullen voor hebt. Van trendy fitnesskleding,
+                    fitnessmaterialen en fitnessvoeding tot fitnessapparaten en fitnessmaterialen. Je vind het allemaal
+                    in ons assortiment. Zo zit er voor elke sporter wel iets bij! Of je nu graag thuis, op het veld of
+                    elders op locatie sport. Met de Fitness & Training producten kan je op elk moment van de dag lekker
+                    sporten!
+                </p>
+                <ul class="catalogue-products__buttons-list">
+                    Bekijk ook:
+                    <li class="catalogue-products__button-item">Top 10 Fitness & Training</li>
+                    <li class="catalogue-products__button-item">Fitnesskleding</li>
+                    <li class="catalogue-products__button-item">Fitnessmaterialen</li>
+                    <li class="catalogue-products__button-item">Fitnessapparaten</li>
+                    <li class="catalogue-products__button-item">Fitnessvoeding</li>
+                    <li class="catalogue-products__button-item">De Beginnende Sporter</li>
+                </ul>
+            </div>
+            <div class="catalogue-products__button-content" href="#"
+                 data-mage-init='{"toggleAdvanced": { "selectorsToggleClass": "catalogue-products__content-more", "baseToggleClass": "active", "toggleContainers": ".catalogue-products__content-less" }}'>
+                <p class="filters__button-more more">Meer</p>
+                <p class="filters__button-more less">Minder</p>
+            </div>
         </div>
-
-          <div class="catalogue-products__image catalogue-products__image--1" style="background-image: url('<?php echo $this->getViewFileUrl("images/list-description-images/1.jpg") ?>');"></div>
+        <div class="catalogue-products__images-box">
+            <div class="container">
+                <ul class="catalogue-products__images-list">
+                    <li class="catalogue-products__images-item">
+                        <a class="catalogue-products__images-link" href="#">
+                            <div class="catalogue-products__image-back catalogue-products__image-back--1">
+                                <div class="catalogue-products__image-text catalogue-products__image-text--1">
+                                    <h2 class="catalogue-products__image-title catalogue-products__image-title--1">
+                                        Sportief aan de slag</h2>
+                                    <h3 class="catalogue-products__image-subtitle catalogue-products__image-subtitle--1">
+                                        sportkleding- en schoenen</h3>
+                                    <button class="button">
+                                        <span class="catalogue-products__image-subtitle-arrow">></span>
+                                    </button>
+                                </div>
+                                <div class="catalogue-products__image catalogue-products__image--1"
+                                     style="background-image: url('<?php echo $this->getViewFileUrl("images/list-description-images/1.jpg") ?>');"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="catalogue-products__images-item">
+                        <a class="catalogue-products__images-link" href="#">
+                            <div class="catalogue-products__image-back catalogue-products__image-back--2">
+                                <div class="catalogue-products__image-text catalogue-products__image-text--2">
+                                    <h2 class="catalogue-products__image-title catalogue-products__image-title--2">
+                                        Sportief aan de slag</h2>
+                                    <h3 class="catalogue-products__image-subtitle catalogue-products__image-subtitle--2">
+                                        sportkleding- en schoenen</h3>
+                                </div>
+                                <button class="button catalogue-products__button--2">
+                                    <span class="catalogue-products__image-subtitle-arrow">></span>
+                                </button>
+                                <a class="catalogue-products__image catalogue-products__image--2"
+                                   style="background-image: url('<?php echo $this->getViewFileUrl("images/list-description-images/2.jpg") ?>');"></a>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="catalogue-products__list-slider" id="catalogue-products-list-slider">
+                    <li class="catalogue-products__item-slider">
+                        <a class="catalogue-products__link-slider" href="#">
+                            <img
+                                class="catalogue-products__slider-image"
+                                src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/1.jpg'); ?>"
+                                alt="slider image">
+                            <p class="catalogue-products__text-slider">
+                                Stadsfietsen
+                            </p>
+                        </a>
+                    </li>
+                    <li class="catalogue-products__item-slider">
+                        <a class="catalogue-products__link-slider" href="#">
+                            <img
+                                class="catalogue-products__slider-image"
+                                src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/2.jpg'); ?>"
+                                alt="slider image">
+                            <p class="catalogue-products__text-slider">
+                                Elektrische fietsen
+                            </p>
+                        </a>
+                    </li>
+                    <li class="catalogue-products__item-slider">
+                        <a class="catalogue-products__link-slider" href="#">
+                            <img
+                                class="catalogue-products__slider-image"
+                                src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/3.jpg'); ?>"
+                                alt="slider image">
+                            <p class="catalogue-products__text-slider">
+                                Kinderfietsen
+                            </p>
+                        </a>
+                    </li>
+                    <li class="catalogue-products__item-slider">
+                        <a class="catalogue-products__link-slider" href="#">
+                            <img
+                                class="catalogue-products__slider-image"
+                                src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/4.jpg'); ?>"
+                                alt="slider image">
+                            <p class="catalogue-products__text-slider">
+                                Mountainbikes
+                            </p>
+                        </a>
+                    </li>
+                    <li class="catalogue-products__item-slider">
+                        <a class="catalogue-products__link-slider" href="#">
+                            <img
+                                class="catalogue-products__slider-image"
+                                src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/5.jpg'); ?>"
+                                alt="slider image">
+                            <p class="catalogue-products__text-slider">
+                                Hybridefietsen
+                            </p>
+                        </a>
+                    </li>
+                    <li class="catalogue-products__item-slider">
+                        <a class="catalogue-products__link-slider" href="#">
+                            <img
+                                class="catalogue-products__slider-image"
+                                src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/6.jpg'); ?>"
+                                alt="slider image">
+                            <p class="catalogue-products__text-slider">
+                                Racefietsen
+                            </p>
+                        </a>
+                    </li>
+                    <li class="catalogue-products__item-slider">
+                        <a class="catalogue-products__link-slider" href="#">
+                            <img
+                                class="catalogue-products__slider-image"
+                                src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/7.jpg'); ?>"
+                                alt="slider image">
+                            <p class="catalogue-products__text-slider">
+                                Vouwfietsen
+                            </p>
+                        </a>
+                    </li>
+                    <li class="catalogue-products__item-slider">
+                        <a class="catalogue-products__link-slider" href="#">
+                            <img
+                                class="catalogue-products__slider-image"
+                                src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/8.jpg'); ?>"
+                                alt="slider image">
+                            <p class="catalogue-products__text-slider">
+                                Moederfietsen
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </a>
-    </li>
-
-    <li class="catalogue-products__images-item">
-      <a class="catalogue-products__images-link" href="#">
-        <div class="catalogue-products__image-back catalogue-products__image-back--2">
-
-        <div class="catalogue-products__image-text catalogue-products__image-text--2">
-          <h2 class="catalogue-products__image-title catalogue-products__image-title--2">Sportief aan de slag</h2>
-          <h3 class="catalogue-products__image-subtitle catalogue-products__image-subtitle--2">sportkleding- en schoenen</h3>
-
-        </div>
-
-          <button class="button catalogue-products__button--2">
-            <span class="catalogue-products__image-subtitle-arrow">></span>
-          </button>
-
-          <a class="catalogue-products__image catalogue-products__image--2" style="background-image: url('<?php echo $this->getViewFileUrl("images/list-description-images/2.jpg") ?>');"></a>
-        </div>
-      </a>
-    </li>
-  </ul>
-
-  <ul class="catalogue-products__list-slider" id="catalogue-products-list-slider">
-    <li class="catalogue-products__item-slider">
-      <a class="catalogue-products__link-slider" href="#">
-          <img
-      class="catalogue-products__slider-image"
-      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/1.jpg'); ?>" alt="slider image">
-        <p class="catalogue-products__text-slider">
-          Stadsfietsen
-        </p>
-      </a>
-</li>
-
-    <li class="catalogue-products__item-slider">
-      <a class="catalogue-products__link-slider" href="#">
-        <img
-      class="catalogue-products__slider-image"
-      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/2.jpg'); ?>" alt="slider image">
-        <p class="catalogue-products__text-slider">
-          Elektrische fietsen
-        </p>
-      </a>
-</li>
-
-    <li class="catalogue-products__item-slider">
-      <a class="catalogue-products__link-slider" href="#">
-        <img
-      class="catalogue-products__slider-image"
-      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/3.jpg'); ?>" alt="slider image">
-        <p class="catalogue-products__text-slider">
-          Kinderfietsen
-        </p>
-      </a>
-</li>
-
-    <li class="catalogue-products__item-slider">
-      <a class="catalogue-products__link-slider" href="#">
-        <img
-      class="catalogue-products__slider-image"
-      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/4.jpg'); ?>" alt="slider image">
-        <p class="catalogue-products__text-slider">
-          Mountainbikes
-        </p>
-      </a>
-</li>
-
-    <li class="catalogue-products__item-slider">
-      <a class="catalogue-products__link-slider" href="#">
-        <img
-      class="catalogue-products__slider-image"
-      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/5.jpg'); ?>" alt="slider image">
-        <p class="catalogue-products__text-slider">
-          Hybridefietsen
-        </p>
-      </a>
-</li>
-
-    <li class="catalogue-products__item-slider">
-      <a class="catalogue-products__link-slider" href="#">
-        <img
-      class="catalogue-products__slider-image"
-      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/6.jpg'); ?>" alt="slider image">
-        <p class="catalogue-products__text-slider">
-          Racefietsen
-        </p>
-      </a>
-</li>
-
-    <li class="catalogue-products__item-slider">
-      <a class="catalogue-products__link-slider" href="#">
-        <img
-      class="catalogue-products__slider-image"
-      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/7.jpg'); ?>" alt="slider image">
-        <p class="catalogue-products__text-slider">
-          Vouwfietsen
-        </p>
-      </a>
-</li>
-
-    <li class="catalogue-products__item-slider">
-      <a class="catalogue-products__link-slider" href="#">
-        <img
-      class="catalogue-products__slider-image"
-      src="<?php echo $this->getViewFileUrl('images/catalog-category-slider-description/8.jpg'); ?>" alt="slider image">
-        <p class="catalogue-products__text-slider">
-          Moederfietsen
-        </p>
-      </a>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
+    </div>
 
 <?php if (!$_productCollection->count()): ?>
-<div class="message info empty">
-    <div>
-    <?= $escaper->escapeHtml(__('We can\'t find products matching the selection.')) ?></div>
+    <div class="message info empty">
+        <div>
+            <?= $escaper->escapeHtml(__('We can\'t find products matching the selection.')) ?></div>
     </div>
 <?php else: ?>
     <?= $block->getToolbarHtml() ?>
@@ -209,22 +203,26 @@ $_helper = $block->getData('outputHelper');
         $showDescription = true;
         $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
     }
-    
+
     /**
      * Position for actions regarding image size changing in vde if needed
      */
     $pos = $block->getPositioned();
-    ?>    
-    <div class="catalogue-products__wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
+    ?>
+    <div class="catalogue-products__wrapper <?= /* @noEscape */
+    $viewMode ?> products-<?= /* @noEscape */
+    $viewMode ?>">
         <ul class="catalogue-products__list">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
-            <?php $product_counter=0; ?>
+            <?php $product_counter = 0; ?>
             <?php foreach ($_productCollection as $_product): ?>
 
                 <li class="catalogue-products__item">
                     <div class="catalogue-products__info"
-                         id="product-item-info_<?= /* @noEscape */ $_product->getId() ?>"
-                         data-container="product-<?= /* @noEscape */ $viewMode ?>">
+                         id="product-item-info_<?= /* @noEscape */
+                         $_product->getId() ?>"
+                         data-container="product-<?= /* @noEscape */
+                         $viewMode ?>">
                         <?php
                         $productImage = $block->getImage($_product, $imageDisplayArea);
                         if ($pos != null) {
@@ -233,248 +231,263 @@ $_helper = $block->getData('outputHelper');
                         }
                         ?>
 
-                      <div class="catalogue-products__box-image">
-                        <?php // Product Image ?>
-                        <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
-                           class="catalogue-products__photo"
-                           tabindex="-1">
-                            <?= $productImage->toHtml() ?>
-                        </a>
+                        <div class="catalogue-products__box-image">
+                            <?php // Product Image ?>
+                            <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
+                               class="catalogue-products__photo"
+                               tabindex="-1">
+                                <?= $productImage->toHtml() ?>
+                            </a>
 
-                        <!-- Add TO COMPARE -->
-                        <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare'); ?>
-                        <div class="catalogue-products__button-compare">
-                            <a href="#"
-                               class="action tocompare"
-                               title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
-                               aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
-                               data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_product); ?>' role="button">
-                      <label class="catalogue-products__compare-label">
+                            <!-- Add TO COMPARE -->
+                            <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare'); ?>
+                            <div class="catalogue-products__button-compare">
+                                <a href="#"
+                                   class="action tocompare"
+                                   title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                   aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                   data-post='<?php /* @escapeNotVerified */
+                                   echo $compareHelper->getPostDataParams($_product); ?>' role="button">
+                                    <label class="catalogue-products__compare-label">
 
                           <span
                               class="catalogue-products__compare-checkbox"
-                              id="catalogue-products__compare-checkbox-<?= /* @noEscape */ $_product->getId()?>">
+                              id="catalogue-products__compare-checkbox-<?= /* @noEscape */
+                              $_product->getId() ?>">
                             </span>
-                            <span class="compare-products__compare-text"><?php /* @escapeNotVerified */ echo __('Vergelijk met andere artikelen') ?></span>
-                          
-                      </label>
-    </a>
-</div>
-<!-- Add TO COMPARE -->
-</div>
+                                        <span class="compare-products__compare-text"><?php /* @escapeNotVerified */
+                                            echo __('Vergelijk met andere artikelen') ?></span>
 
-<div class="catalogue-products__box-descr">
-<div class="catalogue-products__descr-inner">
-    <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
-    <a class="catalogue-products__name">
-        <p
-            class="catalogue-products__text a-btn"
-            href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
-            <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
-        </p>
-        <p class="catalogue-products__link a-btn">
-            <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
-        </p>
-    </a>
+                                    </label>
+                                </a>
+                            </div>
+                            <!-- Add TO COMPARE -->
+                        </div>
 
-    <!-- Review -->
-    <?= $block->getReviewsSummaryHtml($_product, 'short') ?>
-          <?php if($block->getMode() === 'grid'): ?>
-          <?php else: ?>
-              <div class="product-item-text">
+                        <div class="catalogue-products__box-descr">
+                            <div class="catalogue-products__descr-inner">
+                                <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+                                <a class="catalogue-products__name">
+                                    <p
+                                        class="catalogue-products__text a-btn"
+                                        href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
+                                        <?= /* @noEscape */
+                                        $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+                                    </p>
+                                    <p class="catalogue-products__link a-btn">
+                                        <?= /* @noEscape */
+                                        $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+                                    </p>
+                                </a>
 
-                  <a class="product-item-text__link" href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">Meer</a>
-              </div>
-          <?php endif; ?>
-    <!-- Review -->
+                                <!-- Review -->
+                                <?= $block->getReviewsSummaryHtml($_product, 'short') ?>
+                                <?php if ($block->getMode() === 'grid'): ?>
+                                <?php else: ?>
+                                    <div class="product-item-text">
 
-    <div class="catalogue-products__text-more">
-        <div
-            class="catalogue-products__description product description product-item-description">
-            <?php echo $this->helper('Magento\Catalog\Helper\Output')->productAttribute($_product, $_product->getDescription(), 'description') ?>
-            <?= /* @noEscape */ $_helper->productAttribute(
-            $_product,
-            $_product->getShortDescription(),
-            'short_description'
-        ) ?>
-        </div>
-        <a
-            class="action more catalogue-products__button-more a-btn"
-            href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
-            title="<?= /* @noEscape */ $_productNameStripped ?>"><?= $escaper->escapeHtml(__('Meer')) ?>
-        </a>
-    </div>
+                                        <a class="product-item-text__link"
+                                           href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">Meer</a>
+                                    </div>
+                                <?php endif; ?>
+                                <!-- Review -->
 
-    <!-- Products characteristics -->
-    <?= $block->getProductDetailsHtml($_product) ?>
-    <!-- Products characteristics -->
+                                <div class="catalogue-products__text-more">
+                                    <div
+                                        class="catalogue-products__description product description product-item-description">
+                                        <?php echo $this->helper('Magento\Catalog\Helper\Output')->productAttribute($_product, $_product->getDescription(), 'description') ?>
+                                        <?= /* @noEscape */
+                                        $_helper->productAttribute(
+                                            $_product,
+                                            $_product->getShortDescription(),
+                                            'short_description'
+                                        ) ?>
+                                    </div>
+                                    <a
+                                        class="action more catalogue-products__button-more a-btn"
+                                        href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
+                                        title="<?= /* @noEscape */
+                                        $_productNameStripped ?>"><?= $escaper->escapeHtml(__('Meer')) ?>
+                                    </a>
+                                </div>
 
-    <!-- related products -->
-<?php if($product_counter % 4 == 0 && $block->getMode() === 'list'): ?>
+                                <!-- Products characteristics -->
+                                <?= $block->getProductDetailsHtml($_product) ?>
+                                <!-- Products characteristics -->
 
-<?php
-$currentProductId = $_product->getId();
-$relatedProducts = $_product->getRelatedProducts();
-?>
+                                <!-- related products -->
+                                <?php if ($product_counter % 4 == 0 && $block->getMode() === 'list'): ?>
 
-  <p class="catalogue-products__related-title">
-      In verschillende varianten verkrijgbaar:
-  </p>
+                                    <?php
+                                    $currentProductId = $_product->getId();
+                                    $relatedProducts = $_product->getRelatedProducts();
+                                    ?>
 
-<ul class="catalogue-products__related-list">
-  <?php foreach ($relatedProducts as $relatedProduct): ?>
-    <?php
-    $_product = $objectManager->create('Magento\Catalog\Model\Product')->load($relatedProduct->getId());
-    $relatedProductName = $_product->getName();
-  ?>
-    <li class="catalogue-products__related-item">
-      <a class="catalogue-products__related-link" href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>" >
-      <div class="catalogue-products__related-image">
-        <?php
-        $relatedProductImg = $block->getImage($_product, $imageDisplayArea);
-        ?>
-        <?= $relatedProductImg->toHtml() ?>
-    </div>
-    <div class="catalogue-products__related-information">
-      <p class="catalogue-products__related-subtitle"><?= $relatedProductName ?></p>
-      <?= $block->getProductPrice($_product) ?>
-    </div>
-    </a>  
-  
-</li>
-  <?php endforeach; ?>
-</ul>
-<?php endif; ?>
+                                    <p class="catalogue-products__related-title">
+                                        In verschillende varianten verkrijgbaar:
+                                    </p>
 
-  <!-- related products -->
+                                    <ul class="catalogue-products__related-list">
+                                        <?php foreach ($relatedProducts as $relatedProduct): ?>
+                                            <?php
+                                            $_product = $objectManager->create('Magento\Catalog\Model\Product')->load($relatedProduct->getId());
+                                            $relatedProductName = $_product->getName();
+                                            ?>
+                                            <li class="catalogue-products__related-item">
+                                                <a class="catalogue-products__related-link"
+                                                   href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
+                                                    <div class="catalogue-products__related-image">
+                                                        <?php
+                                                        $relatedProductImg = $block->getImage($_product, $imageDisplayArea);
+                                                        ?>
+                                                        <?= $relatedProductImg->toHtml() ?>
+                                                    </div>
+                                                    <div class="catalogue-products__related-information">
+                                                        <p class="catalogue-products__related-subtitle"><?= $relatedProductName ?></p>
+                                                        <?= $block->getProductPrice($_product) ?>
+                                                    </div>
+                                                </a>
 
-</div>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
 
-<div class="product-item-inner">
-    <div class="catalogue-products__box">
-        <div class="catalogue-products__box3">
+                                <!-- related products -->
 
-            <?php if ($_product->isSaleable()):?>
-            <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                            </div>
 
-            <?= /* @noEscape */ $block->getProductPrice($_product) ?>
+                            <div class="product-item-inner">
+                                <div class="catalogue-products__box">
+                                    <div class="catalogue-products__box3">
 
-            <form
-                class="catalogue-products__form"
-                data-role="tocart-form"
-                data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
-                action="<?= $escaper->escapeUrl($postParams['action']) ?>"
-                method="post">
-                <?php $options = $block->getData('viewModel')->getOptionsData($_product); ?>
+                                        <?php if ($_product->isSaleable()): ?>
+                                            <?php $postParams = $block->getAddToCartPostParams($_product); ?>
 
-                <?= $block->getBlockHtml('formkey') ?>
+                                            <?= /* @noEscape */
+                                            $block->getProductPrice($_product) ?>
 
-                <!-- some text -->
-                <?php if ($product_counter % 3 == 0): ?>
-                <span class="catalogue-products__some-text">SUPER PRODUCT</span>
+                                            <form
+                                                class="catalogue-products__form"
+                                                data-role="tocart-form"
+                                                data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
+                                                action="<?= $escaper->escapeUrl($postParams['action']) ?>"
+                                                method="post">
+                                                <?php $options = $block->getData('viewModel')->getOptionsData($_product); ?>
 
-                <?php
-                $product_counter++
-                ?>
-                <?php endif; ?>
-                <!-- some text -->
-                <div class="catalogue-products__btn">
-                    <button
-                        type="submit"
-                        title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
-                        class="catalogue-products__button-cart action tocart primary"
-                        disabled="disabled">
-                        <svg
-                            class="catalogue-products__cart-icon"
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="32"
-                            height="32"
-                            viewbox="0 0 32 32">
-                            <title>cart</title>
-                            <path
-                                d="M12 29c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z"></path>
-                            <path
-                                d="M32 29c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z"></path>
-                            <path
-                                d="M32 16v-12h-24c0-1.105-0.895-2-2-2h-6v2h4l1.502 12.877c-0.915 0.733-1.502 1.859-1.502 3.123 0 2.209 1.791 4 4 4h24v-2h-24c-1.105 0-2-0.895-2-2 0-0.007 0-0.014 0-0.020l26-3.98z"></path>
-                        </svg>
-                    </button>
+                                                <?= $block->getBlockHtml('formkey') ?>
 
-                    <?php $wishlistHelper = $this->helper('Magento\Wishlist\Helper\Data'); ?>
-                    <ul class="catalogue-products_wishlist-list">
-                        <li class="catalogue-products__wishlist-item" data-bind="scope: 'wishlist'">
-                            <a
-                                class="catalogue-products__wishlist-link"
-                                href="#"
-                                title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
-                                aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
-                                data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_product); ?>'
-                                data-action="add-to-wishlist"
-                                role="button">
-                                <svg
-                                    class="catalogue-products__wish-icon"
-                                    version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewbox="0 0 32 32">
-                                    <title>heart</title>
-                                    <path
-                                        d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-                                </svg>
-                            </a>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </form>
-    <?php else:?>
-        <?php if ($_product->isAvailable()):?>
-        <div class="stock available">
-            <span><?= $escaper->escapeHtml(__('In stock')) ?></span></div>
-    <?php else:?>
-        <div class="stock unavailable">
-            <span><?= $escaper->escapeHtml(__('Out of stock')) ?></span></div>
-        <?php endif; ?>
-        <?php endif; ?>
-    </div>
+                                                <!-- some text -->
+                                                <?php if ($product_counter % 3 == 0): ?>
+                                                    <span class="catalogue-products__some-text">SUPER PRODUCT</span>
 
-    <?= ($pos && strpos($pos, $viewMode . '-primary')) ?
-                                        /* @noEscape */ $secureRenderer->renderStyleAsTag(
+                                                    <?php
+                                                    $product_counter++
+                                                    ?>
+                                                <?php endif; ?>
+                                                <!-- some text -->
+                                                <div class="catalogue-products__btn">
+                                                    <button
+                                                        type="submit"
+                                                        title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
+                                                        class="catalogue-products__button-cart action tocart primary"
+                                                        disabled="disabled">
+                                                        <svg
+                                                            class="catalogue-products__cart-icon"
+                                                            version="1.1"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="32"
+                                                            height="32"
+                                                            viewbox="0 0 32 32">
+                                                            <title>cart</title>
+                                                            <path
+                                                                d="M12 29c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z"></path>
+                                                            <path
+                                                                d="M32 29c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z"></path>
+                                                            <path
+                                                                d="M32 16v-12h-24c0-1.105-0.895-2-2-2h-6v2h4l1.502 12.877c-0.915 0.733-1.502 1.859-1.502 3.123 0 2.209 1.791 4 4 4h24v-2h-24c-1.105 0-2-0.895-2-2 0-0.007 0-0.014 0-0.020l26-3.98z"></path>
+                                                        </svg>
+                                                    </button>
+
+                                                    <?php $wishlistHelper = $this->helper('Magento\Wishlist\Helper\Data'); ?>
+                                                    <ul class="catalogue-products_wishlist-list">
+                                                        <li class="catalogue-products__wishlist-item"
+                                                            data-bind="scope: 'wishlist'">
+                                                            <a
+                                                                class="catalogue-products__wishlist-link"
+                                                                href="#"
+                                                                title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                                                aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                                                data-post='<?php /* @escapeNotVerified */
+                                                                echo $block->getAddToWishlistParams($_product); ?>'
+                                                                data-action="add-to-wishlist"
+                                                                role="button">
+                                                                <svg
+                                                                    class="catalogue-products__wish-icon"
+                                                                    version="1.1"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    width="32"
+                                                                    height="32"
+                                                                    viewbox="0 0 32 32">
+                                                                    <title>heart</title>
+                                                                    <path
+                                                                        d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
+                                                                </svg>
+                                                            </a>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </form>
+                                        <?php else: ?>
+                                            <?php if ($_product->isAvailable()): ?>
+                                                <div class="stock available">
+                                                    <span><?= $escaper->escapeHtml(__('In stock')) ?></span></div>
+                                            <?php else: ?>
+                                                <div class="stock unavailable">
+                                                    <span><?= $escaper->escapeHtml(__('Out of stock')) ?></span></div>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <?= ($pos && strpos($pos, $viewMode . '-primary')) ?
+                                        /* @noEscape */
+                                        $secureRenderer->renderStyleAsTag(
                                             $position,
                                             'product-item-info_' . $_product->getId() . ' div.actions-primary'
                                         ) : '' ?>
 
-    <?= ($pos && strpos($pos, $viewMode . '-secondary')) ?
-                                        /* @noEscape */ $secureRenderer->renderStyleAsTag(
+                                    <?= ($pos && strpos($pos, $viewMode . '-secondary')) ?
+                                        /* @noEscape */
+                                        $secureRenderer->renderStyleAsTag(
                                             $position,
                                             'product-item-info_' . $_product->getId() . ' div.actions-secondary'
                                         ) : '' ?>
-</div>
+                                </div>
 
-</div>
-</div>
-</div>
-<?= ($pos && strpos($pos, $viewMode . '-actions')) ?
-                /* @noEscape */ $secureRenderer->renderStyleAsTag(
-                    $position,
-                    'product-item-info_' . $_product->getId() . ' div.product-item-actions'
-                ) : '' ?>
-</li>
+                            </div>
+                        </div>
+                    </div>
+                    <?= ($pos && strpos($pos, $viewMode . '-actions')) ?
+                        /* @noEscape */
+                        $secureRenderer->renderStyleAsTag(
+                            $position,
+                            'product-item-info_' . $_product->getId() . ' div.product-item-actions'
+                        ) : '' ?>
+                </li>
 
-<?php $product_counter++; ?>
-<?php endforeach; ?>
-</ul>
+                <?php $product_counter++; ?>
+            <?php endforeach; ?>
+        </ul>
 
-    <div class="toolbar__bottom">
-        <?php echo $this->getToolbarHtml() ?>
+        <div class="toolbar__bottom">
+            <?php echo $this->getToolbarHtml() ?>
+        </div>
+
     </div>
-    
-</div>
 
-<?php // phpcs:ignore Magento2.Legacy.PhtmlTemplate ?>
-<script type="text/x-magento-init">
+    <?php // phpcs:ignore Magento2.Legacy.PhtmlTemplate ?>
+    <script type="text/x-magento-init">
 {
 "[data-role=tocart-form], .form.map.checkout": {
 "catalogAddToCart": {
@@ -482,13 +495,17 @@ $relatedProducts = $_product->getRelatedProducts();
 }
 }
 }
-</script>
 
-<script type="text/x-magento-init">
+
+    </script>
+
+    <script type="text/x-magento-init">
   {
     "#catalogue-products-list-slider": {
       "catalogueProductsListSlider": {}
   }
 }
-</script>
+
+
+    </script>
 <?php endif; ?>
