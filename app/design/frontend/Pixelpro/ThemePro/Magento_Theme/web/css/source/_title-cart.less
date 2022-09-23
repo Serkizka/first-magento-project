@@ -1,17 +1,23 @@
 .checkout-cart-index {
     .page-title {
         position: relative;
+        margin-bottom: 15px;
+        padding-left: 50px;
         font-size: 28px;
         font-weight: 700;
         &::before {
             position: absolute;
             content: "";
-            background-image: url("/images/cart-images/cart-title-icon.svg");
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 41px;
+            height: 41px;
+            background-image: url("../images/cart-images/cart-title-icon.svg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
-            width: 20px;
-            height: 20px;
         }
     }
 }

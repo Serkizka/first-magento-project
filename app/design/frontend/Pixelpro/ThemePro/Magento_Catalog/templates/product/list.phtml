@@ -278,7 +278,14 @@ $_helper = $block->getData('outputHelper');
     </a>
 
     <!-- Review -->
-    <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
+    <?= $block->getReviewsSummaryHtml($_product, 'short') ?>
+          <?php if($block->getMode() === 'grid'): ?>
+          <?php else: ?>
+              <div class="product-item-text">
+
+                  <a class="product-item-text__link" href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">Meer</a>
+              </div>
+          <?php endif; ?>
     <!-- Review -->
 
     <div class="catalogue-products__text-more">
