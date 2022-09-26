@@ -1,9 +1,8 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright © Elogic. All rights reserved.
+ * See https://elogic.co for license details.
  */
-
 use Magento\Framework\App\Action\Action;
 
 ?>
@@ -66,8 +65,8 @@ $_helper = $block->getData('outputHelper');
                                         <span class="catalogue-products__image-subtitle-arrow">></span>
                                     </button>
                                 </div>
-                                <div class="catalogue-products__image catalogue-products__image--1"
-                                     style="background-image: url('<?php echo $this->getViewFileUrl("images/list-description-images/1.jpg") ?>');"></div>
+                                <div class="catalogue-products__image catalogue-products__image--description1"
+                                     style="background-image: url('<?php echo $this->getViewFileUrl("images/list-description-images/description-background-image1.jpg") ?>');"></div>
                             </div>
                         </a>
                     </li>
@@ -83,8 +82,8 @@ $_helper = $block->getData('outputHelper');
                                 <button class="button catalogue-products__button--2">
                                     <span class="catalogue-products__image-subtitle-arrow">></span>
                                 </button>
-                                <a class="catalogue-products__image catalogue-products__image--2"
-                                   style="background-image: url('<?php echo $this->getViewFileUrl("images/list-description-images/2.jpg") ?>');"></a>
+                                <a class="catalogue-products__image catalogue-products__image--description2"
+                                   style="background-image: url('<?php echo $this->getViewFileUrl("images/list-description-images/description-background-image2.jpg") ?>');"></a>
                             </div>
                         </a>
                     </li>
@@ -378,13 +377,14 @@ $_helper = $block->getData('outputHelper');
                                                 <?= $block->getBlockHtml('formkey') ?>
 
                                                 <!-- some text -->
-                                                <?php if ($product_counter % 3 == 0): ?>
-                                                    <span class="catalogue-products__some-text">SUPER PRODUCT</span>
-
-                                                    <?php
+                                                <?php
+                                                 if ($product_counter % 3 == 0 && $block->getMode() === 'list') {
+                                                  echo '<div class="catalogue-products__some-text">SUPER PRODUCT</div>';
+                                                 } elseif ($product_counter % 1 === 0 && $block->getMode() === 'grid') {
+                                                  echo '<div class="catalogue-products__some-text">SUPER PRODUCT</div>';
+                                                    }
                                                     $product_counter++
-                                                    ?>
-                                                <?php endif; ?>
+                                                ?>
                                                 <!-- some text -->
                                                 <div class="catalogue-products__btn">
                                                     <button
