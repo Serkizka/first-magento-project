@@ -377,14 +377,26 @@ $_helper = $block->getData('outputHelper');
                                                 <?= $block->getBlockHtml('formkey') ?>
 
                                                 <!-- some text -->
-                                                <?php
-                                                 if ($product_counter % 3 == 0 && $block->getMode() === 'list') {
-                                                  echo '<div class="catalogue-products__some-text">SUPER PRODUCT</div>';
-                                                 } elseif ($product_counter % 1 === 0 && $block->getMode() === 'grid') {
-                                                  echo '<div class="catalogue-products__some-text">SUPER PRODUCT</div>';
-                                                    }
-                                                    $product_counter++
-                                                ?>
+    <?php
+      if ($product_counter % 3 == 0 && $block->getMode() === 'list') {
+        echo '<div class="catalogue-products__wrapper-inStock">
+        <h2 class="catalogue-products__title-inStock">
+        <p class="catalogue-products__border-inStock"></p>
+        Select
+        </h2>
+        <p class="catalogue-products__some-text">SUPER PRODUCT</p>
+        </div>';
+      } elseif ($block->getMode() === 'grid') {
+        echo '<div class="catalogue-products__wrapper-inStock">
+        <h2 class="catalogue-products__title-inStock">
+        <p class="catalogue-products__border-inStock"></p>
+        Select
+        </h2>
+        <p class="catalogue-products__some-text">SUPER PRODUCT</p>
+        </div>';
+        }
+        $product_counter++
+    ?>
                                                 <!-- some text -->
                                                 <div class="catalogue-products__btn">
                                                     <button

@@ -17,12 +17,13 @@
             }
             &::before {
                 content: "\e610";
-                font-family: 'luma-icons';
+                font-family: "luma-icons";
                 line-height: 22px;
                 font-size: 12px;
                 text-align: center;
                 color: transparent;
-                transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+                transition: color 0.5s ease-in-out,
+                    background-color 0.5s ease-in-out;
             }
             &:active,
             &:checked,
@@ -71,6 +72,10 @@
     .filters__hidden {
         display: none;
     }
+}
+
+.filter-options-title {
+    z-index: unset;
 }
 
 #filters-button-more {

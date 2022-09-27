@@ -50,32 +50,64 @@
         </a>
     <?php endif; ?>
     <div class="sorter-info" id="toolbar-sorter__modal">
+
         <button
             data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "toggleContainers": "#toolbar-sorter__modal, #toolbar-sorter__overlay"}}'>
             &times;
         </button>
-        <h3 class="sorter-info__title"><?= __('Hoe sorteren werkt') ?></h3>
-        <p class="sorter-info__desc">
-            Artikelen hebben vaak meerdere verkopers. Je ziet per zoekresultaat de verkoper die het beste scoort op
-            leverbelofte, prijs en prestatiescore. Daarnaast sorteren we standaard alle resultaten op populariteit, maar
-            je kunt deze ook zelf sorteren:
+
+        <h2 id="toolbar-sorter__title"><?= __('Hoe sorteren werkt') ?></h2>
+        <p id="stoolbar-sorter__text">
+          <?= __('Artikelen hebben vaak meerdere verkopers. Je ziet per zoekresultaat de verkoper die het beste scoort op leverbelofte, prijs en prestatiescore. Daarnaast sorteren we standaard alle resultaten op populariteit, maar je kunt deze ook zelf sorteren:') ?>
         </p>
-        <ul class="sorter-info__items">
-            <li class="sorter-info__item">
-                <p class="sorter-info__item-title">Populariteit van de artikelen</p>
-                <p class="sorter-info__item-text">
-                    Hiervoor kijken we op verschillende manieren naar hoeveel interesse er is in een artikel. Tussen de
-                    resultaten kunnen ook gesponsorde artikelen* verschijnen.
-                </p>
-            </li>
-            <li class="sorter-info__item">
-                <p class="sorter-info__item-title">Prijs</p>
-                <p class="sorter-info__item-text">
-                    Van laag naar hoog of van hoog naar laag.
-                </p>
-            </li>
-        </ul>
+
+    <ul id="toolbar-sorter__list">
+    <li id="toolbar-sorter__item">
+      <h3 id="toolbar-sorter__subtitle"><?= __('Populariteit van de artikelen') ?>
+      </h3>
+      <p id="toolbar-sorter__item-text">
+          <?= __('Hiervoor kijken we op verschillende manieren naar hoeveel interesse er is in een artikel. Tussen de
+          resultaten kunnen ook gesponsorde artikelen* verschijnen.') ?>
+      </p>
+    </li>
+
+      <li id="toolbar-sorter__item">
+      <h3 id="toolbar-sorter__subtitle"><?= __('Prijs') ?></h3>
+      <p id="toolbar-sorter__item-text">
+          <?= __('Van laag naar hoog of van hoog naar laag.') ?>
+      </p>
+  </li>
+
+    <li id="toolbar-sorter__item">
+      <h3 id="toolbar-sorter__subtitle"><?= __('Nieuw op bol.com') ?></h3>
+      <p id="toolbar-sorter__item-text">
+          <?= __('Wat nieuw is op bol.com staat bovenaan.') ?>
+      </p>
+  </li>
+
+  <li id="toolbar-sorter__item">
+      <h3 id="toolbar-sorter__subtitle"><?= __('Beoordeling') ?></h3>
+      <p id="toolbar-sorter__item-text">
+          <?= __('Artikelen met de beste reviews komen eerst. We kijken per artikel wat de score is, hoeveel reviews er zijn en hoe nieuw de reviews zijn.') ?>
+      </p>
+  </li>
+
+    <li id="toolbar-sorter__item">
+      <h3 id="toolbar-sorter__subtitle"><?= __('Meest gewild op verlanglijstjes') ?></h3>
+      <p id="toolbar-sorter__item-text">
+          <?= __('Hoe vaker bewaard, hoe hoger het staat.') ?>
+      </p>
+  </li>
+
+    <li id="toolbar-sorter__popup-bottom">
+    <h3 id="toolbar-sorter__subtitle"><?= __('* Wat zijn gesponsorde artikelen?') ?></h3>
+    <p id="toolbar-sorter__item-text"><?= __('Verkopers kunnen tegen betaling een artikel meer op laten vallen. Het staat dan hoger tussen de resultaten.') ?>
+    </p>
+    </li>
+
+  </ul>
     </div>
-    <div id="toolbar-sorter__overlay"
+    
+<div id="toolbar-sorter__overlay"
          data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "baseToggleClass": "", "toggleContainers": "#toolbar-sorter__modal, #toolbar-sorter__overlay"}}'></div>
 </div>
