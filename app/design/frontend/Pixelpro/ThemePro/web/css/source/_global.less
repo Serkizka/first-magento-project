@@ -77,7 +77,8 @@ a[class].a-btn {
     text-decoration: transparent;
     transition: color 0.5s, text-decoration 0.5s;
 
-    &:focus {}
+    &:focus {
+    }
 
     &:hover {
         text-decoration: underline;
@@ -86,4 +87,59 @@ a[class].a-btn {
     &:active {
         color: #00f;
     }
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 100px;
+    padding: 20px;
+    width: 55%;
+    height: 75%;
+    border: 1px solid #888888;
+    background-color: #fefefe;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out,
+        z-index 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.modal.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 5;
+}
+
+#overlay {
+    opacity: 0;
+}
+#overlay.active {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    opacity: 1;
+    z-index: 4;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 32px;
+    color: @blue-600;
 }

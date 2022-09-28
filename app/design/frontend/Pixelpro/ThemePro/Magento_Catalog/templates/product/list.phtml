@@ -310,73 +310,73 @@ $_helper = $block->getData('outputHelper');
                                     </a>
                                 </div>
 
-                                <!-- Products characteristics -->
-                                <?= $block->getProductDetailsHtml($_product) ?>
-                                <!-- Products characteristics -->
+        <!-- Products characteristics -->
+        <?= $block->getProductDetailsHtml($_product) ?>
+        <!-- Products characteristics -->
 
-                                <!-- related products -->
-                                <?php if ($product_counter % 4 == 0 && $block->getMode() === 'list'): ?>
+        <!-- related products -->
+        <?php if ($product_counter % 4 == 0 && $block->getMode() === 'list'): ?>
 
-                                    <?php
-                                    $currentProductId = $_product->getId();
-                                    $relatedProducts = $_product->getRelatedProducts();
-                                    ?>
+            <?php
+            $currentProductId = $_product->getId();
+            $relatedProducts = $_product->getRelatedProducts();
+            ?>
 
-                                    <p class="catalogue-products__related-title">
-                                        In verschillende varianten verkrijgbaar:
-                                    </p>
+            <p class="catalogue-products__related-title">
+                In verschillende varianten verkrijgbaar:
+            </p>
 
-                                    <ul class="catalogue-products__related-list">
-                                        <?php foreach ($relatedProducts as $relatedProduct): ?>
-                                            <?php
-                                            $_product = $objectManager->create('Magento\Catalog\Model\Product')->load($relatedProduct->getId());
-                                            $relatedProductName = $_product->getName();
-                                            ?>
-                                            <li class="catalogue-products__related-item">
-                                                <a class="catalogue-products__related-link"
-                                                   href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
-                                                    <div class="catalogue-products__related-image">
-                                                        <?php
-                                                        $relatedProductImg = $block->getImage($_product, $imageDisplayArea);
-                                                        ?>
-                                                        <?= $relatedProductImg->toHtml() ?>
-                                                    </div>
-                                                    <div class="catalogue-products__related-information">
-                                                        <p class="catalogue-products__related-subtitle"><?= $relatedProductName ?></p>
-                                                        <?= $block->getProductPrice($_product) ?>
-                                                    </div>
-                                                </a>
-
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php endif; ?>
-
-                                <!-- related products -->
-
+            <ul class="catalogue-products__related-list">
+                <?php foreach ($relatedProducts as $relatedProduct): ?>
+                    <?php
+                    $_product = $objectManager->create('Magento\Catalog\Model\Product')->load($relatedProduct->getId());
+                    $relatedProductName = $_product->getName();
+                    ?>
+                    <li class="catalogue-products__related-item">
+                        <a class="catalogue-products__related-link"
+                            href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
+                            <div class="catalogue-products__related-image">
+                                <?php
+                                $relatedProductImg = $block->getImage($_product, $imageDisplayArea);
+                                ?>
+                                <?= $relatedProductImg->toHtml() ?>
                             </div>
+                            <div class="catalogue-products__related-information">
+                                <p class="catalogue-products__related-subtitle"><?= $relatedProductName ?></p>
+                                <?= $block->getProductPrice($_product) ?>
+                            </div>
+                        </a>
 
-                            <div class="product-item-inner">
-                                <div class="catalogue-products__box">
-                                    <div class="catalogue-products__box3">
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
 
-                                        <?php if ($_product->isSaleable()): ?>
-                                            <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+        <!-- related products -->
 
-                                            <?= /* @noEscape */
-                                            $block->getProductPrice($_product) ?>
+    </div>
 
-                                            <form
-                                                class="catalogue-products__form"
-                                                data-role="tocart-form"
-                                                data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
-                                                action="<?= $escaper->escapeUrl($postParams['action']) ?>"
-                                                method="post">
-                                                <?php $options = $block->getData('viewModel')->getOptionsData($_product); ?>
+<div class="product-item-inner">
+<div class="catalogue-products__box">
+<div class="catalogue-products__box3">
 
-                                                <?= $block->getBlockHtml('formkey') ?>
+<?php if ($_product->isSaleable()): ?>
+  <?php $postParams = $block->getAddToCartPostParams($_product); ?>
 
-                                                <!-- some text -->
+  <?= /* @noEscape */
+  $block->getProductPrice($_product) ?>
+
+  <form
+      class="catalogue-products__form"
+      data-role="tocart-form"
+      data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
+      action="<?= $escaper->escapeUrl($postParams['action']) ?>"
+      method="post">
+      <?php $options = $block->getData('viewModel')->getOptionsData($_product); ?>
+
+      <?= $block->getBlockHtml('formkey') ?>
+
+      <!-- some text -->
     <?php
       if ($product_counter % 3 == 0 && $block->getMode() === 'list') {
         echo '<div class="catalogue-products__wrapper-inStock">
