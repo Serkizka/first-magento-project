@@ -1,52 +1,20 @@
 .materials {
-    max-width: 1240px;
-    margin: 0 auto;
-    &__image {
-        width: 141px;
+    .slick-list {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
     }
     .slick-slide {
         &:not(:last-child) {
-            margin-right: 17px;
+            margin-right: 19px;
         }
     }
+    &__image {
+        max-width: 141px;
+    }
+
     &__text {
         font-size: 16px;
         cursor: pointer;
     }
-
-    .slick-prev {
-        left: 0;
-    }
-
-    .slick-next {
-        right: 0;
-    }
-
-    .slick-next,
-    .slick-prev {
-        top: calc(~'50% - -30px');
-        width: 35px;
-        height: 35px;
-        background-color: @white;
-        border-radius: 4px;
-
-        &:before {
-            content: "<";
-            font-size: 25px;
-            font-weight: 800;
-            line-height: 1.25;
-            color: @blue-600;
-        }
-    }
-    .slick-next {
-        &::before {
-            content: ">";
-        }
-    }
-}
-
-.slick-track {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }

@@ -1,4 +1,3 @@
-// materials-slider
 define(["jquery", "slick"], function ($) {
     let materialsSlider = $(".materials > .pagebuilder-column-group");
 
@@ -24,4 +23,3 @@ define(["jquery", "slick"], function ($) {
         });
     }
 });
-// materials-slider

@@ -24,7 +24,7 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
         <td class="cart__item-box col item" data-th="<?= $block->escapeHtml(__('Item')) ?>">
             <?php if ($block->hasProductUrl()): ?>
                 <a class="cart__image-link product-item-photo"
-                href="<?= $block->escapeUrl($block->getProductUrl()) ?>"
+                href="https://ddev-magento2.ddev.site/index.php/en/checkout/cart/"
                    title="<?= $block->escapeHtml($block->getProductName()) ?>"
                    tabindex="-1">
             <?php else: ?>

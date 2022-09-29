@@ -38,19 +38,19 @@
     </div>
 
     <div id="overlay">
-    </div>
+    
 
     <div class="language-popup__modal modal" id="modal">
       
         <button class="language-popup__button-close modal-close">&times;</button>
 
       <h2 class="language-popup__modal-title">
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+      <svg class="language-popup__modal-svg" version="1.0" xmlns="http://www.w3.org/2000/svg"
         width="150px" height="48px" viewBox="0 0 2339.000000 571.000000"
         preserveAspectRatio="xMidYMid meet">
 
         <g transform="translate(0.000000,571.000000) scale(0.100000,-0.100000)"
-        fill="#000" stroke="none">
+        fill="#0000a4" stroke="none">
         <path d="M21635 5643 c-522 -34 -997 -311 -1281 -748 -319 -492 -362 -1105
         -113 -1635 193 -409 550 -727 977 -869 187 -62 275 -75 512 -75 184 0 230 3
         317 22 341 74 613 222 851 463 237 241 386 523 454 861 30 148 32 460 5 605
@@ -153,8 +153,9 @@
                 <?php endif; ?>
             <?php endforeach; ?>
 
-            <button class="language-popup__modal-button"><?= __('Doorgaan') ?>
+            <button class="language-popup__modal-button button" data-dismiss="modal"><?= __('Doorgaan') ?>
             </button>
+            </div>
             </div>
   <script type="text/x-magento-init">
   {

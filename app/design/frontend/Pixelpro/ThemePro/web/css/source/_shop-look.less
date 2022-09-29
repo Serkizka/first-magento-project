@@ -1,16 +1,7 @@
 .shop-look {
     max-width: 1220px;
     padding: 0 10px;
-    margin: 0 auto 40px;
-    &__image {
-        height: 168px;
-        width: 230px;
-        border-radius: 50%;
-        &:not(:last-child) {
-            margin-right: 20px;
-        }
-    }
-
+    margin: 0 auto;
     &__text {
         display: flex;
         justify-content: space-between;
@@ -31,46 +22,27 @@
         }
     }
 
-    .slick-prev {
-        left: 0;
-    }
-
-    .slick-next {
-        right: 0;
-    }
-
-    .slick-next,
-    .slick-prev {
-        top: 50%;
-        width: 35px;
-        height: 35px;
-        background-color: @white;
-        border-radius: 4px;
-
-        &:before {
-            content: "<";
-            font-size: 25px;
-            font-weight: 800;
-            line-height: 1.25;
-            color: @blue-600;
-        }
-    }
-    .slick-next {
-        &::before {
-            content: ">";
-        }
-    }
-
-    .slick-track {
-        margin-bottom: 40px;
-    }
-
-    .slick-list {
+    &__image {
         display: flex;
-        max-width: 1220px;
-        padding: 0 10px;
-        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+
+    .pagebuilder-column {
+        height: 100%;
+    }
+
+    // .pagebuilder-mobile-hidden {
+    //     height: 170px;
+    // }
+
+    &__img-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
-
-// pagebuilder-column-group slick-initialized slick-slider

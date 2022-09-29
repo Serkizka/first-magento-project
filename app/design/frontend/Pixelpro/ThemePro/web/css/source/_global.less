@@ -93,16 +93,16 @@ a[class].a-btn {
     position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: space-around;
+    align-items: baseline;
     text-align: left;
     margin: 0 auto;
     left: 0;
     right: 0;
     top: 100px;
     padding: 20px;
-    width: 55%;
-    height: 75%;
+    width: 45%;
+    height: 50%;
     border: 1px solid #888888;
     background-color: #fefefe;
     overflow: hidden;
@@ -142,4 +142,56 @@ a[class].a-btn {
     right: 20px;
     font-size: 32px;
     color: @blue-600;
+}
+
+// SLICK
+
+.slick-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.slick-list {
+    display: flex;
+    max-width: 1220px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.slick-slide {
+    width: 100%;
+    height: auto;
+    &:not(:last-child) {
+        margin-right: 20px;
+    }
+}
+
+.slick-next {
+    right: 0;
+    &::before {
+        content: ">";
+    }
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.slick-next,
+.slick-prev {
+    top: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: @white;
+    border-radius: 4px;
+
+    &:before {
+        content: "<";
+        font-size: 25px;
+        font-weight: 800;
+        line-height: 1.25;
+        color: @blue-600;
+    }
 }
