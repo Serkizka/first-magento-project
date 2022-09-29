@@ -10,7 +10,6 @@ define(["jquery", "slick"], function ($) {
             dots: false,
             infinite: false,
             arrows: true,
-            variableWidth: true,
             responsive: [
                 {
                     breakpoint: 768,
