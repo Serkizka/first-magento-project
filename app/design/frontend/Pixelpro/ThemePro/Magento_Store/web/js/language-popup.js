@@ -8,15 +8,11 @@ overlay.addEventListener("click", close);
 closeBtn.addEventListener("click", close);
 
 function clicked(ev) {
-    overlay.classList.toggle("active");
-    modal.classList.toggle("active");
+    overlay.classList.add("active");
+    modal.classList.add("active");
 }
 
 function close() {
-    overlay.classList.toggle("active");
-    modal.classList.toggle("active");
+    overlay.classList.remove("active");
+    modal.classList.remove("active");
 }
-
-// function close(ev) {
-//     modal.classList.removeClass("active");
-// }

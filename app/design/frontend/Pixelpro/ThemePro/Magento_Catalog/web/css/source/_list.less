@@ -470,6 +470,7 @@
 
 .product-image-wrapper {
     margin: 0;
+    z-index: unset;
 }
 
 .product-item-inner {
@@ -495,6 +496,13 @@
 .catalogue-products__button-content {
     .more {
         display: block;
+        color: @blue-900;
+        cursor: pointer;
+        text-decoration: transparent;
+        transition: text-decoration 0.5s;
+        &:hover {
+            text-decoration: underline;
+        }
     }
     .less {
         display: none;

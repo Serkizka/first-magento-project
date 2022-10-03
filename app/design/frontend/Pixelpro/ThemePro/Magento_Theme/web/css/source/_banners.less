@@ -1,5 +1,5 @@
 .banners {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
     &__list {
         display: flex;
         justify-content: space-between;
@@ -19,20 +19,33 @@
         position: relative;
         text-align: center;
         margin: 0 auto;
+        margin-bottom: 20px;
         width: 260px;
         background-color: white;
-        box-shadow: 1px 2px 4px 0 rgba(49, 49, 47, .3);
+        box-shadow: 1px 2px 4px 0 rgba(49, 49, 47, 0.3);
         border-radius: 0 0 4px 4px;
 
         &::after {
             position: absolute;
-            content: '';
+            content: "";
             margin-left: 10px;
             background-image: url("@{baseDir}/images/alarm.svg");
             width: 20px;
             height: 20px;
         }
     }
+
+    #demo {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        width: 300px;
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
     &__wrapper {
         display: flex;
         justify-content: space-around;
@@ -89,12 +102,12 @@
         font-size: 14px;
         background-color: @blue-600;
         color: @white;
-        
+
         &--1 {
-          padding: 15px;
-          &:hover {
-            transform: scale(1.1);
-          }
+            padding: 15px;
+            &:hover {
+                transform: scale(1.1);
+            }
         }
         &--2 {
             position: absolute;
@@ -103,6 +116,6 @@
     }
 
     #banners__btn {
-      box-shadow: 0 4px 0 -2px rgba(3,3,26, .25);
+        box-shadow: 0 4px 0 -2px rgba(3, 3, 26, 0.25);
     }
 }

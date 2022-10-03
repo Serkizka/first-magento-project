@@ -4,7 +4,25 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
+    }
+
+    .checkout-cart-index .cart-container .form-cart {
+        position: absolute;
+        top: 300px;
+        width: 66%;
+    }
+
+    .cart-container .form-cart .actions.main {
+        width: 26%;
+        float: left;
+    }
+
+    .abs-shopping-cart-items-desktop,
+    .block-cart-failed,
+    .cart-container .form-cart,
+    .cart-container .cart-gift-item {
+        position: absolute;
     }
 
     .cart.table-wrapper .item .col.item {
@@ -22,8 +40,9 @@
 
     .cart__info.item-info {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        width: 94%;
     }
 
     .cart__item-info {
@@ -85,14 +104,7 @@
 
     .cart.table-wrapper .cart > .item {
         border-top: none;
-    }
-
-    .cart-container .form-cart {
-        max-width: 1220px;
-        width: 100%;
-        padding-right: 0;
-        border-top: 1px solid @lightGray;
-        border-bottom: 1px solid @lightGray;
+        border-bottom: transparent;
     }
 
     .cart-discount .block > .title {
@@ -103,11 +115,51 @@
         padding: 0;
     }
 
+    // delete button
+    .cart.table-wrapper .actions-toolbar > .action-edit:before,
+    .cart.table-wrapper .actions-toolbar > .action-delete:before {
+        position: absolute;
+        left: 184px;
+    }
+    // delete button
+
+    // edit button
+    .cart.table-wrapper .actions-toolbar > .action-edit,
+    .cart.table-wrapper .actions-toolbar > .action-delete {
+        right: -60px;
+    }
+    // edit button
+
     // Summary
 
     .cart-summary {
         position: static;
+        border-radius: 10px;
+        border: 1px solid @gray-100;
+        background-color: @cream;
         order: 1;
     }
+
+    cart-summary._sticky {
+        top: 180px;
+        z-index: 1;
+    }
+
+    .cart-summary .checkout-methods-items .action.primary.checkout {
+        width: 80%;
+        background-color: @orange-200;
+        color: @darkColor;
+        border: 1px solid @orange-300;
+    }
+
     // End Summary
+
+    // MORE PRODUCTS
+
+    .products.wrapper.grid.products-grid.products-crosssell,
+    .block-title.title {
+        display: none;
+    }
+
+    // MORE PRODUCTS
 }
